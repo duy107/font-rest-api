@@ -1,0 +1,43 @@
+a{
+    color: #000;
+}
+
+.company{
+    &__item{
+        border: 1px solid #ddd;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    &__header{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border-bottom: 1px solid red;
+        padding-bottom: 5px;
+    }
+
+    &__name{
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    &__logo {
+        width: 70px;
+        height: 70px;
+
+        & img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+    }
+
+    &__body{ 
+        font-size: 15px;
+        margin-top: 5px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}

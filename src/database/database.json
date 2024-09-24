@@ -1,0 +1,496 @@
+{
+  "city": [
+    {
+      "key": 1,
+      "value": "Hà Nội",
+      "id": "ecfa"
+    },
+    {
+      "key": 2,
+      "value": "Hồ Chí Minh",
+      "id": "1e1c"
+    },
+    {
+      "key": 3,
+      "value": "Đà Nẵng",
+      "id": "4542"
+    }
+  ],
+  "tags": [
+    {
+      "key": 1,
+      "value": "HTML",
+      "id": "601d"
+    },
+    {
+      "key": 2,
+      "value": "CSS",
+      "id": "0b72"
+    },
+    {
+      "key": 3,
+      "value": "Java",
+      "id": "d365"
+    },
+    {
+      "key": 4,
+      "value": "Python",
+      "id": "6901"
+    },
+    {
+      "key": 5,
+      "value": "PHP",
+      "id": "7fad"
+    },
+    {
+      "key": 6,
+      "value": "Javascript",
+      "id": "4312"
+    },
+    {
+      "key": 7,
+      "value": "Database",
+      "id": "ae70"
+    },
+    {
+      "key": 8,
+      "value": "C",
+      "id": "475f"
+    },
+    {
+      "key": 9,
+      "value": "VueJS",
+      "id": "59ac"
+    },
+    {
+      "key": 10,
+      "value": "Django",
+      "id": "5c9f"
+    },
+    {
+      "key": 11,
+      "value": "JQuery",
+      "id": "71c5"
+    },
+    {
+      "key": 12,
+      "value": "TypeScript",
+      "id": "105a"
+    },
+    {
+      "key": 13,
+      "value": "SQL",
+      "id": "435a"
+    },
+    {
+      "key": 14,
+      "value": "ReactJS",
+      "id": "4a05"
+    }
+  ],
+  "jobs": [
+    {
+      "idCompany": 2,
+      "name": "Fontend Dev (TypeScript/ReactJS)",
+      "tags": [
+        "ReactJS",
+        "TypeScript",
+        "Angular"
+      ],
+      "salary": "1500$",
+      "description": "Lập trình viên không đơn thuần chỉ là một coder giỏi mà còn phải có tư duy như một Designer, một Business Analyst (BA) có thể phát triển sản phẩm đẹp, tiện dụng mang lại trải nghiệm tốt nhất cho người dùng. Bởi vì trong sự cạnh tranh khốc liệt thì một sản phẩm đẹp hơn sẽ chiếm được tình cảm và sự ủng hộ từ phía người dùng, người ta không thể sử dụng một thiết bị rất đẹp về mọi thứ như iPhone, nhưng khi mở ứng dụng của bạn lên lại thấy xấu, thiết kế cẩu thả, mắc phải các lỗi cơ bản về hiển thị. Có hàng tá sản phẩm giống bạn nhưng lại rất tiện dụng, trong khi đó sản phẩm của bạn lại rối rắm, phức tạp, thì rõ ràng không ai muốn bỏ thời gian, công sức để tìm hiểu. Nói một cách khác, một sản phẩm xấu, hoặc khó sử dụng sẽ làm cho người dùng cảm thấy nó thiếu chuyên nghiệp và không tôn trọng họ. Sản phẩm đẹp sẽ giúp bạn nâng cao tính cạnh tranh, dễ quảng bá và truyền thông đến với người dùng.",
+      "status": false,
+      "createAt": "29-4-2023 21:22:17",
+      "id": "2",
+      "city": [
+        "Hà Nội"
+      ],
+      "updateAt": "30-4-2023 14:12:25"
+    },
+    {
+      "idCompany": 3,
+      "name": "Fontend Dev (Angular/ReactJS)",
+      "tags": [
+        "ReactJS",
+        "TypeScript",
+        "Angular"
+      ],
+      "salary": "1000$",
+      "description": "Lập trình viên không đơn thuần chỉ là một coder giỏi mà còn phải có tư duy như một Designer, một Business Analyst (BA) có thể phát triển sản phẩm đẹp, tiện dụng mang lại trải nghiệm tốt nhất cho người dùng. Bởi vì trong sự cạnh tranh khốc liệt thì một sản phẩm đẹp hơn sẽ chiếm được tình cảm và sự ủng hộ từ phía người dùng, người ta không thể sử dụng một thiết bị rất đẹp về mọi thứ như iPhone, nhưng khi mở ứng dụng của bạn lên lại thấy xấu, thiết kế cẩu thả, mắc phải các lỗi cơ bản về hiển thị. Có hàng tá sản phẩm giống bạn nhưng lại rất tiện dụng, trong khi đó sản phẩm của bạn lại rối rắm, phức tạp, thì rõ ràng không ai muốn bỏ thời gian, công sức để tìm hiểu. Nói một cách khác, một sản phẩm xấu, hoặc khó sử dụng sẽ làm cho người dùng cảm thấy nó thiếu chuyên nghiệp và không tôn trọng họ. Sản phẩm đẹp sẽ giúp bạn nâng cao tính cạnh tranh, dễ quảng bá và truyền thông đến với người dùng.",
+      "status": false,
+      "createAt": "29-4-2023 21:22:17",
+      "id": "3",
+      "city": [
+        "Hồ Chí Minh"
+      ],
+      "updateAt": "18-09-2024 18:15:41"
+    },
+    {
+      "idCompany": 2,
+      "name": "Fontend Dev (Angular/TypeJS)",
+      "tags": [
+        "ReactJS",
+        "TypeScript",
+        "Angular"
+      ],
+      "salary": "1000$",
+      "description": "Lập trình viên không đơn thuần chỉ là một coder giỏi mà còn phải có tư duy như một Designer, một Business Analyst (BA) có thể phát triển sản phẩm đẹp, tiện dụng mang lại trải nghiệm tốt nhất cho người dùng. Bởi vì trong sự cạnh tranh khốc liệt thì một sản phẩm đẹp hơn sẽ chiếm được tình cảm và sự ủng hộ từ phía người dùng, người ta không thể sử dụng một thiết bị rất đẹp về mọi thứ như iPhone, nhưng khi mở ứng dụng của bạn lên lại thấy xấu, thiết kế cẩu thả, mắc phải các lỗi cơ bản về hiển thị. Có hàng tá sản phẩm giống bạn nhưng lại rất tiện dụng, trong khi đó sản phẩm của bạn lại rối rắm, phức tạp, thì rõ ràng không ai muốn bỏ thời gian, công sức để tìm hiểu. Nói một cách khác, một sản phẩm xấu, hoặc khó sử dụng sẽ làm cho người dùng cảm thấy nó thiếu chuyên nghiệp và không tôn trọng họ. Sản phẩm đẹp sẽ giúp bạn nâng cao tính cạnh tranh, dễ quảng bá và truyền thông đến với người dùng.",
+      "status": true,
+      "createAt": "29-4-2023 21:22:17",
+      "id": "4",
+      "city": [
+        "Đà Nẵng"
+      ],
+      "updateAt": "30-4-2023 14:12:25"
+    },
+    {
+      "idCompany": 1,
+      "name": "Fullstask Web Developer",
+      "tags": [
+        "Java",
+        "TypeScript",
+        "Angular",
+        "CSS",
+        "Python",
+        "SQL",
+        "ReactJS",
+        "JQuery",
+        "Django",
+        "Javascript",
+        "VueJS",
+        "PHP",
+        "HTML"
+      ],
+      "salary": "2000$",
+      "description": "Lập trình viên không đơn thuần chỉ là một coder giỏi mà còn phải có tư duy như một Designer, một Business Analyst (BA) có thể phát triển sản phẩm đẹp, tiện dụng mang lại trải nghiệm tốt nhất cho người dùng. Bởi vì trong sự cạnh tranh khốc liệt thì một sản phẩm đẹp hơn sẽ chiếm được tình cảm và sự ủng hộ từ phía người dùng, người ta không thể sử dụng một thiết bị rất đẹp về mọi thứ như iPhone, nhưng khi mở ứng dụng của bạn lên lại thấy xấu, thiết kế cẩu thả, mắc phải các lỗi cơ bản về hiển thị. Có hàng tá sản phẩm giống bạn nhưng lại rất tiện dụng, trong khi đó sản phẩm của bạn lại rối rắm, phức tạp, thì rõ ràng không ai muốn bỏ thời gian, công sức để tìm hiểu. Nói một cách khác, một sản phẩm xấu, hoặc khó sử dụng sẽ làm cho người dùng cảm thấy nó thiếu chuyên nghiệp và không tôn trọng họ. Sản phẩm đẹp sẽ giúp bạn nâng cao tính cạnh tranh, dễ quảng bá và truyền thông đến với người dùng.",
+      "status": true,
+      "createAt": "29-4-2023 21:22:17",
+      "id": "5",
+      "city": [
+        "Đà Nẵng"
+      ],
+      "updateAt": "18-09-2024 18:26:11"
+    },
+    {
+      "idCompany": 2,
+      "name": "Fontend Dev (Angular/TypeJS)",
+      "tags": [
+        "ReactJS",
+        "TypeScript",
+        "Java"
+      ],
+      "salary": "1000$",
+      "description": "Lập trình viên không đơn thuần chỉ là một coder giỏi mà còn phải có tư duy như một Designer, một Business Analyst (BA) có thể phát triển sản phẩm đẹp, tiện dụng mang lại trải nghiệm tốt nhất cho người dùng. Bởi vì trong sự cạnh tranh khốc liệt thì một sản phẩm đẹp hơn sẽ chiếm được tình cảm và sự ủng hộ từ phía người dùng, người ta không thể sử dụng một thiết bị rất đẹp về mọi thứ như iPhone, nhưng khi mở ứng dụng của bạn lên lại thấy xấu, thiết kế cẩu thả, mắc phải các lỗi cơ bản về hiển thị. Có hàng tá sản phẩm giống bạn nhưng lại rất tiện dụng, trong khi đó sản phẩm của bạn lại rối rắm, phức tạp, thì rõ ràng không ai muốn bỏ thời gian, công sức để tìm hiểu. Nói một cách khác, một sản phẩm xấu, hoặc khó sử dụng sẽ làm cho người dùng cảm thấy nó thiếu chuyên nghiệp và không tôn trọng họ. Sản phẩm đẹp sẽ giúp bạn nâng cao tính cạnh tranh, dễ quảng bá và truyền thông đến với người dùng.",
+      "status": true,
+      "createAt": "29-4-2023 21:22:17",
+      "id": "6",
+      "city": [
+        "Đà Nẵng",
+        "Hà Nội",
+        "Hồ Chí Minh"
+      ],
+      "updateAt": "30-4-2023 14:12:25"
+    },
+    {
+      "idCompany": 2,
+      "name": "Fontend Dev (Angular/TypeJS)",
+      "tags": [
+        "ReactJS",
+        "TypeScript",
+        "Angular"
+      ],
+      "salary": "1000$",
+      "description": "Lập trình viên không đơn thuần chỉ là một coder giỏi mà còn phải có tư duy như một Designer, một Business Analyst (BA) có thể phát triển sản phẩm đẹp, tiện dụng mang lại trải nghiệm tốt nhất cho người dùng. Bởi vì trong sự cạnh tranh khốc liệt thì một sản phẩm đẹp hơn sẽ chiếm được tình cảm và sự ủng hộ từ phía người dùng, người ta không thể sử dụng một thiết bị rất đẹp về mọi thứ như iPhone, nhưng khi mở ứng dụng của bạn lên lại thấy xấu, thiết kế cẩu thả, mắc phải các lỗi cơ bản về hiển thị. Có hàng tá sản phẩm giống bạn nhưng lại rất tiện dụng, trong khi đó sản phẩm của bạn lại rối rắm, phức tạp, thì rõ ràng không ai muốn bỏ thời gian, công sức để tìm hiểu. Nói một cách khác, một sản phẩm xấu, hoặc khó sử dụng sẽ làm cho người dùng cảm thấy nó thiếu chuyên nghiệp và không tôn trọng họ. Sản phẩm đẹp sẽ giúp bạn nâng cao tính cạnh tranh, dễ quảng bá và truyền thông đến với người dùng.",
+      "status": true,
+      "createAt": "10-4-2023 21:22:17",
+      "id": "7",
+      "city": [
+        "Đà Nẵng",
+        "Hà Nội"
+      ],
+      "updateAt": "30-4-2023 14:12:25"
+    },
+    {
+      "id": "3012",
+      "name": "Backend deverloper",
+      "tags": [
+        "CSS",
+        "HTML",
+        "Java",
+        "Python",
+        "Django",
+        "VueJS",
+        "Database",
+        "C",
+        "JQuery",
+        "TypeScript",
+        "ReactJS",
+        "SQL"
+      ],
+      "salary": "111111$",
+      "city": [
+        "Hà Nội",
+        "Hồ Chí Minh",
+        "Đà Nẵng"
+      ],
+      "description": "111",
+      "idCompany": "9550"
+    },
+    {
+      "id": "de52",
+      "name": "Backend deverloper",
+      "tags": [
+        "CSS",
+        "Java",
+        "Python",
+        "PHP",
+        "Javascript",
+        "Database"
+      ],
+      "salary": "rr$",
+      "city": [
+        "Hồ Chí Minh",
+        "Đà Nẵng",
+        "Hà Nội"
+      ],
+      "description": "tt",
+      "status": true,
+      "idCompany": "9550",
+      "createAt": "15-09-2024 15:29:58"
+    },
+    {
+      "id": "b9db",
+      "name": "Backend Developer",
+      "tags": [
+        "Java",
+        "Python",
+        "PHP",
+        "CSS"
+      ],
+      "salary": "1500$",
+      "city": [
+        "Hà Nội",
+        "Hồ Chí Minh"
+      ],
+      "description": "1. Phát triển và bảo trì hệ thống phía sau\n•\tThiết kế kiến trúc hệ thống: Tạo ra cấu trúc cơ bản cho hệ thống và xử lý các luồng dữ liệu giữa người dùng và máy chủ.\n•\tXử lý logic kinh doanh: Viết code để thực hiện các quy tắc và chức năng của ứng dụng như xử lý giao dịch, quản lý người dùng, quản lý thanh toán, xử lý đơn hàng, v.v.\n2. Quản lý cơ sở dữ liệu\n•\tThiết kế và tối ưu hóa cơ sở dữ liệu: Lập trình viên backend thiết kế cấu trúc cơ sở dữ liệu, xây dựng các bảng và quan hệ giữa chúng.\n•\tTruy vấn và thao tác dữ liệu: Sử dụng các ngôn ngữ như SQL để lấy, chèn, sửa hoặc xóa dữ liệu trong cơ sở dữ liệu.\n•\tTối ưu hóa hiệu suất truy vấn: Đảm bảo rằng truy vấn cơ sở dữ liệu chạy hiệu quả và nhanh chóng.\n3. Xây dựng API (Giao diện lập trình ứng dụng)\n•\tTạo API RESTful hoặc GraphQL: Xây dựng giao diện để frontend và các hệ thống khác có thể tương tác với cơ sở dữ liệu và hệ thống phía sau.\n•\tXử lý bảo mật API: Đảm bảo API an toàn, chống lại các lỗ hổng bảo mật như tấn công SQL injection, XSS, CSRF.\n4. Tối ưu hóa hiệu suất\n•\tTối ưu hóa tốc độ xử lý: Đảm bảo rằng hệ thống xử lý nhanh và hiệu quả, đặc biệt là khi có lượng người dùng lớn.\n•\tCaching: Sử dụng các kỹ thuật cache (như Redis, Memcached) để giảm tải cho hệ thống.\n5. Bảo mật hệ thống\n•\tXác thực và phân quyền người dùng: Quản lý việc đăng nhập, đăng ký, và phân quyền cho người dùng.\n•\tBảo vệ dữ liệu: Mã hóa dữ liệu nhạy cảm và tuân thủ các tiêu chuẩn bảo mật, chẳng hạn như GDPR.\n6. Tích hợp và quản lý máy chủ\n•\tQuản lý máy chủ và dịch vụ: Thiết lập, cấu hình và bảo trì các máy chủ và dịch vụ backend (thường sử dụng dịch vụ đám mây như AWS, Azure hoặc Google Cloud).\n•\tTriển khai (Deployment): Triển khai các phiên bản mới của hệ thống lên môi trường production và đảm bảo hệ thống luôn chạy ổn định.\n7. Hợp tác với các đội ngũ khác\n•\tLàm việc cùng frontend developers: Hợp tác chặt chẽ với các lập trình viên phía trước để tích hợp hệ thống và API.\n•\tLàm việc cùng đội ngũ kiểm thử (QA): Cộng tác để kiểm tra, sửa lỗi và tối ưu hóa các tính năng.\nKỹ năng cần có:\n•\tNgôn ngữ lập trình: Java, Python, PHP, Ruby, Node.js, Go.\n•\tCơ sở dữ liệu: MySQL, PostgreSQL, MongoDB, Oracle.\n•\tAPI: RESTful, GraphQL.\n•\tCác công cụ DevOps: Docker, Kubernetes, CI/CD tools.\n•\tBảo mật: Kiến thức về bảo mật hệ thống và quản lý dữ liệu nhạy cảm.\n\n",
+      "status": true,
+      "idCompany": "1",
+      "createAt": "18-09-2024 10:27:07",
+      "updateAt": "21-09-2024 20:52:46"
+    }
+  ],
+  "cv": [
+    {
+      "id": "1",
+      "idCompany": 1,
+      "idJob": 4,
+      "name": "Le Van A",
+      "phone": "11111111",
+      "email": "levana@gmail.com",
+      "statusRead": true,
+      "description": "Xin chào tôi là Lê Văn A. Hiện tại tôi đang ....",
+      "linkProject": "",
+      "createAt": "29-4-2023 10:31:41",
+      "city": "Hà Nội"
+    },
+    {
+      "id": "2",
+      "idCompany": 1,
+      "idJob": 4,
+      "name": "Le Van E",
+      "phone": "2222222",
+      "email": "levane@gmail.com",
+      "statusRead": true,
+      "description": "Xin chào tôi là Lê Văn E. Hiện tại tôi đang ....",
+      "linkProject": "",
+      "createAt": "29-4-2023 10:31:41",
+      "city": "Hà Nội"
+    },
+    {
+      "id": "3",
+      "idCompany": 1,
+      "idJob": 4,
+      "name": "Le Van F",
+      "phone": "3333333",
+      "email": "levanf@gmail.com",
+      "statusRead": true,
+      "description": "Xin chào tôi là Lê Văn F. Hiện tại tôi đang ....",
+      "linkProject": "",
+      "createAt": "29-4-2023 10:31:41",
+      "city": "Hà Nội"
+    },
+    {
+      "id": "4",
+      "idCompany": 1,
+      "idJob": 4,
+      "name": "Le Van A",
+      "phone": "11111111",
+      "email": "levana@gmail.com",
+      "statusRead": true,
+      "description": "Xin chào tôi là Lê Văn A. Hiện tại tôi đang ....",
+      "linkProject": "",
+      "createAt": "29-4-2023 10:31:41",
+      "city": "Hà Nội"
+    },
+    {
+      "id": "5",
+      "idCompany": 1,
+      "idJob": 4,
+      "name": "Le Van A",
+      "phone": "11111111",
+      "email": "levana@gmail.com",
+      "statusRead": true,
+      "description": "Xin chào tôi là Lê Văn A. Hiện tại tôi đang ....",
+      "linkProject": "",
+      "createAt": "29-4-2023 10:31:41",
+      "city": "Hà Nội"
+    },
+    {
+      "id": "aa93",
+      "name": "Trinh thi a",
+      "phone": "11111111111111",
+      "email": "2222222222222222222222222",
+      "city": "Đà Nẵng",
+      "infor": "22222222222222222222222222222",
+      "project": "222222222222222222222222222222222",
+      "idJob": "4",
+      "idCompany": 2,
+      "createAt": "18-09-2024 12:10:49",
+      "statusRead": true
+    },
+    {
+      "id": "eb6c",
+      "name": "trinh cong dddddddd",
+      "phone": "rrrrrrrrrrr",
+      "email": "rrrrrrrr",
+      "city": "Đà Nẵng",
+      "description": "rrrrrrrrrr",
+      "linkProject": "rrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+      "idJob": "4",
+      "idCompany": 2,
+      "createAt": "23-09-2024 19:00:32",
+      "statusRead": true
+    },
+    {
+      "id": "1e9e",
+      "name": "rrrrrrrrrrr",
+      "phone": "rrrrrrrrrrrrr",
+      "email": "duy@gmail.com",
+      "city": "Đà Nẵng",
+      "description": "rrrrrrrrrrrr",
+      "linkProject": "rrrrrrrrrrrr",
+      "idJob": "5",
+      "idCompany": 1,
+      "createAt": "23-09-2024 20:30:07",
+      "statusRead": true
+    }
+  ],
+  "company": [
+    {
+      "companyName": "Công ty CMC",
+      "logo": "http://localhost/images/cmc.png",
+      "phone": "123456789",
+      "email": "contact@abc.com",
+      "password": "abc123",
+      "token": "qegegfbgfhs",
+      "id": "1",
+      "quantityPeople": 8,
+      "description": "Công ty chúng tôi là một doanh nghiệp tiên phong trong lĩnh vực công nghệ thông tin, cam kết mang đến những sản phẩm và dịch vụ chất lượng cao, đáp ứng nhu cầu ngày càng cao của khách hàng.",
+      "detail": "Công ty ABC là một doanh nghiệp hàng đầu trong lĩnh vực công nghệ thông tin, với hơn 30 năm kinh nghiệm hoạt động trên thị trường. Được thành lập vào năm 1990, công ty đã không ngừng phát triển và mở rộng quy mô, từ một doanh nghiệp nhỏ thành một tập đoàn uy tín, có mặt tại nhiều quốc gia. Công ty ABC luôn hướng đến sứ mệnh mang lại giá trị thực sự cho khách hàng thông qua các sản phẩm và dịch vụ chất lượng cao, đổi mới và đáp ứng nhu cầu của thị trường. Với tầm nhìn dài hạn, chúng tôi đặt mục tiêu trở thành một trong những doanh nghiệp tiên phong trong ngành công nghệ thông tin trên toàn cầu, đồng thời góp phần vào sự phát triển bền vững của xã hội.",
+      "address": "123 đường Tran Phu",
+      "workingtime": "T2-T7",
+      "website": "https://abc.com"
+    },
+    {
+      "companyName": "Công ty FPT",
+      "logo": "http://localhost/images/fpt.png",
+      "phone": "123456789",
+      "email": "contact@abcd.com",
+      "password": "abcd123",
+      "token": "qegegfbgfhs",
+      "id": "2",
+      "quantityPeople": 9,
+      "description": "Công ty chúng tôi là một doanh nghiệp tiên phong trong lĩnh vực công nghệ thông tin, cam kết mang đến những sản phẩm và dịch vụ chất lượng cao, đáp ứng nhu cầu ngày càng cao của khách hàng.",
+      "detail": "Công ty ABCD là một doanh nghiệp hàng đầu trong lĩnh vực công nghệ thông tin, với hơn 30 năm kinh nghiệm hoạt động trên thị trường. Được thành lập vào năm 1990, công ty đã không ngừng phát triển và mở rộng quy mô, từ một doanh nghiệp nhỏ thành một tập đoàn uy tín, có mặt tại nhiều quốc gia. Công ty ABCD luôn hướng đến sứ mệnh mang lại giá trị thực sự cho khách hàng thông qua các sản phẩm và dịch vụ chất lượng cao, đổi mới và đáp ứng nhu cầu của thị trường. Với tầm nhìn dài hạn, chúng tôi đặt mục tiêu trở thành một trong những doanh nghiệp tiên phong trong ngành công nghệ thông tin trên toàn cầu, đồng thời góp phần vào sự phát triển bền vững của xã hội.",
+      "address": "123 đường Tran Phu",
+      "workingtime": "T2-T7",
+      "website": "https://abcd.com"
+    },
+    {
+      "companyName": "Công ty SAMSUNG",
+      "logo": "http://localhost/images/samsung.png",
+      "phone": "123456789",
+      "email": "contact@abcde.com",
+      "password": "abcde123",
+      "token": "qegegfbgfhs",
+      "id": "3",
+      "quantityPeople": 5,
+      "description": "Công ty chúng tôi là một doanh nghiệp tiên phong trong lĩnh vực công nghệ thông tin, cam kết mang đến những sản phẩm và dịch vụ chất lượng cao, đáp ứng nhu cầu ngày càng cao của khách hàng.",
+      "detail": "Công ty ABCDE là một doanh nghiệp hàng đầu trong lĩnh vực công nghệ thông tin, với hơn 30 năm kinh nghiệm hoạt động trên thị trường. Được thành lập vào năm 1990, công ty đã không ngừng phát triển và mở rộng quy mô, từ một doanh nghiệp nhỏ thành một tập đoàn uy tín, có mặt tại nhiều quốc gia. Công ty ABCDE luôn hướng đến sứ mệnh mang lại giá trị thực sự cho khách hàng thông qua các sản phẩm và dịch vụ chất lượng cao, đổi mới và đáp ứng nhu cầu của thị trường. Với tầm nhìn dài hạn, chúng tôi đặt mục tiêu trở thành một trong những doanh nghiệp tiên phong trong ngành công nghệ thông tin trên toàn cầu, đồng thời góp phần vào sự phát triển bền vững của xã hội.",
+      "address": "123 đường Tran Phu",
+      "workingtime": "T2-T7",
+      "website": "https://abcde.com"
+    },
+    {
+      "companyName": "Công ty SUN",
+      "logo": "http://localhost/images/sun.png",
+      "phone": "123456789",
+      "email": "contact@abcde.com",
+      "password": "abcde123",
+      "token": "qegegfbgfhs",
+      "id": "4",
+      "quantityPeople": 5,
+      "description": "Công ty chúng tôi là một doanh nghiệp tiên phong trong lĩnh vực công nghệ thông tin, cam kết mang đến những sản phẩm và dịch vụ chất lượng cao, đáp ứng nhu cầu ngày càng cao của khách hàng.",
+      "detail": "Công ty ABCDE là một doanh nghiệp hàng đầu trong lĩnh vực công nghệ thông tin, với hơn 30 năm kinh nghiệm hoạt động trên thị trường. Được thành lập vào năm 1990, công ty đã không ngừng phát triển và mở rộng quy mô, từ một doanh nghiệp nhỏ thành một tập đoàn uy tín, có mặt tại nhiều quốc gia. Công ty ABCDE luôn hướng đến sứ mệnh mang lại giá trị thực sự cho khách hàng thông qua các sản phẩm và dịch vụ chất lượng cao, đổi mới và đáp ứng nhu cầu của thị trường. Với tầm nhìn dài hạn, chúng tôi đặt mục tiêu trở thành một trong những doanh nghiệp tiên phong trong ngành công nghệ thông tin trên toàn cầu, đồng thời góp phần vào sự phát triển bền vững của xã hội.",
+      "address": "123 đường Tran Phu",
+      "workingtime": "T2-T7",
+      "website": "https://abcde.com"
+    },
+    {
+      "companyName": "Công ty VIETTEL",
+      "logo": "http://localhost/images/viettel.png",
+      "phone": "123456789",
+      "email": "contact@abcde.com",
+      "password": "abcde123",
+      "token": "qegegfbgfhs",
+      "id": "5",
+      "quantityPeople": 5,
+      "description": "Công ty chúng tôi là một doanh nghiệp tiên phong trong lĩnh vực công nghệ thông tin, cam kết mang đến những sản phẩm và dịch vụ chất lượng cao, đáp ứng nhu cầu ngày càng cao của khách hàng.",
+      "detail": "Công ty ABCDE là một doanh nghiệp hàng đầu trong lĩnh vực công nghệ thông tin, với hơn 30 năm kinh nghiệm hoạt động trên thị trường. Được thành lập vào năm 1990, công ty đã không ngừng phát triển và mở rộng quy mô, từ một doanh nghiệp nhỏ thành một tập đoàn uy tín, có mặt tại nhiều quốc gia. Công ty ABCDE luôn hướng đến sứ mệnh mang lại giá trị thực sự cho khách hàng thông qua các sản phẩm và dịch vụ chất lượng cao, đổi mới và đáp ứng nhu cầu của thị trường. Với tầm nhìn dài hạn, chúng tôi đặt mục tiêu trở thành một trong những doanh nghiệp tiên phong trong ngành công nghệ thông tin trên toàn cầu, đồng thời góp phần vào sự phát triển bền vững của xã hội.",
+      "address": "123 đường Tran Phu",
+      "workingtime": "T2-T7",
+      "website": "https://abcde.com"
+    },
+    {
+      "companyName": "Công ty VNPT",
+      "logo": "http://localhost/images/vnpt.png",
+      "phone": "123456789",
+      "email": "contact@abcde.com",
+      "password": "abcde123",
+      "token": "qegegfbgfhs",
+      "id": "6",
+      "quantityPeople": 5,
+      "description": "Công ty chúng tôi là một doanh nghiệp tiên phong trong lĩnh vực công nghệ thông tin, cam kết mang đến những sản phẩm và dịch vụ chất lượng cao, đáp ứng nhu cầu ngày càng cao của khách hàng.",
+      "detail": "Công ty ABCDE là một doanh nghiệp hàng đầu trong lĩnh vực công nghệ thông tin, với hơn 30 năm kinh nghiệm hoạt động trên thị trường. Được thành lập vào năm 1990, công ty đã không ngừng phát triển và mở rộng quy mô, từ một doanh nghiệp nhỏ thành một tập đoàn uy tín, có mặt tại nhiều quốc gia. Công ty ABCDE luôn hướng đến sứ mệnh mang lại giá trị thực sự cho khách hàng thông qua các sản phẩm và dịch vụ chất lượng cao, đổi mới và đáp ứng nhu cầu của thị trường. Với tầm nhìn dài hạn, chúng tôi đặt mục tiêu trở thành một trong những doanh nghiệp tiên phong trong ngành công nghệ thông tin trên toàn cầu, đồng thời góp phần vào sự phát triển bền vững của xã hội.",
+      "address": "123 đường Tran Phu",
+      "workingtime": "T2-T7",
+      "website": "https://abcde.com"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "email": "duy@gmail.com",
+      "password": "12345",
+      "token": "Bga8ngF66xCgFdVJdAGx",
+      "isUser": true
+    },
+    {
+      "id": "2",
+      "email": "ngoc@gmail.com",
+      "password": "12345",
+      "token": "kfXsp38YCVhvy9Vcm7xD",
+      "isUser": true
+    }
+  ]
+}

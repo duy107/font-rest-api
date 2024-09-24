@@ -1,0 +1,12 @@
+.job{
+    &__detail{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    &__title{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
