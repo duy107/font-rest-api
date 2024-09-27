@@ -169,7 +169,7 @@
       "city": [
         "Đà Nẵng"
       ],
-      "updateAt": "18-09-2024 18:26:11"
+      "updateAt": "26-09-2024 22:05:33"
     },
     {
       "idCompany": 2,
@@ -276,7 +276,29 @@
       "status": true,
       "idCompany": "1",
       "createAt": "18-09-2024 10:27:07",
-      "updateAt": "21-09-2024 20:52:46"
+      "updateAt": "27-09-2024 11:55:56"
+    },
+    {
+      "id": "55f3",
+      "name": "AI",
+      "tags": [
+        "Python",
+        "Django",
+        "TypeScript",
+        "JQuery",
+        "SQL"
+      ],
+      "salary": "4000$",
+      "city": [
+        "Hà Nội",
+        "Hồ Chí Minh",
+        "Đà Nẵng"
+      ],
+      "description": "fffffffffffff",
+      "status": true,
+      "idCompany": "1",
+      "createAt": "26-09-2024 23:33:51",
+      "updateAt": "26-09-2024 23:36:11"
     }
   ],
   "cv": [
@@ -284,6 +306,7 @@
       "id": "1",
       "idCompany": 1,
       "idJob": 4,
+      "idUser": "5",
       "name": "Le Van A",
       "phone": "11111111",
       "email": "levana@gmail.com",
@@ -291,12 +314,14 @@
       "description": "Xin chào tôi là Lê Văn A. Hiện tại tôi đang ....",
       "linkProject": "",
       "createAt": "29-4-2023 10:31:41",
-      "city": "Hà Nội"
+      "city": "Hà Nội",
+      "accepted": true
     },
     {
       "id": "2",
       "idCompany": 1,
       "idJob": 4,
+      "idUser": "5",
       "name": "Le Van E",
       "phone": "2222222",
       "email": "levane@gmail.com",
@@ -304,12 +329,14 @@
       "description": "Xin chào tôi là Lê Văn E. Hiện tại tôi đang ....",
       "linkProject": "",
       "createAt": "29-4-2023 10:31:41",
-      "city": "Hà Nội"
+      "city": "Hà Nội",
+      "accepted": true
     },
     {
       "id": "3",
       "idCompany": 1,
       "idJob": 4,
+      "idUser": "5",
       "name": "Le Van F",
       "phone": "3333333",
       "email": "levanf@gmail.com",
@@ -323,6 +350,7 @@
       "id": "4",
       "idCompany": 1,
       "idJob": 4,
+      "idUser": "5",
       "name": "Le Van A",
       "phone": "11111111",
       "email": "levana@gmail.com",
@@ -330,20 +358,8 @@
       "description": "Xin chào tôi là Lê Văn A. Hiện tại tôi đang ....",
       "linkProject": "",
       "createAt": "29-4-2023 10:31:41",
-      "city": "Hà Nội"
-    },
-    {
-      "id": "5",
-      "idCompany": 1,
-      "idJob": 4,
-      "name": "Le Van A",
-      "phone": "11111111",
-      "email": "levana@gmail.com",
-      "statusRead": true,
-      "description": "Xin chào tôi là Lê Văn A. Hiện tại tôi đang ....",
-      "linkProject": "",
-      "createAt": "29-4-2023 10:31:41",
-      "city": "Hà Nội"
+      "city": "Hà Nội",
+      "accepted": true
     },
     {
       "id": "aa93",
@@ -355,6 +371,7 @@
       "project": "222222222222222222222222222222222",
       "idJob": "4",
       "idCompany": 2,
+      "idUser": "3",
       "createAt": "18-09-2024 12:10:49",
       "statusRead": true
     },
@@ -368,21 +385,39 @@
       "linkProject": "rrrrrrrrrrrrrrrrrrrrrrrrrrrr",
       "idJob": "4",
       "idCompany": 2,
+      "idUser": "2",
       "createAt": "23-09-2024 19:00:32",
       "statusRead": true
     },
     {
-      "id": "1e9e",
-      "name": "rrrrrrrrrrr",
-      "phone": "rrrrrrrrrrrrr",
+      "id": "3d81",
+      "name": "d",
+      "phone": "d",
+      "email": "duy@gmail.com",
+      "city": "Hà Nội",
+      "description": "đ",
+      "linkProject": "d",
+      "idJob": "6",
+      "idCompany": 2,
+      "idUser": "1",
+      "createAt": "25-09-2024 17:58:18",
+      "statusRead": true,
+      "accepted": true
+    },
+    {
+      "id": "5794",
+      "name": "trinh cong duy",
+      "phone": "1111111",
       "email": "duy@gmail.com",
       "city": "Đà Nẵng",
-      "description": "rrrrrrrrrrrr",
-      "linkProject": "rrrrrrrrrrrr",
+      "description": "hjk",
+      "linkProject": "jkl",
       "idJob": "5",
       "idCompany": 1,
-      "createAt": "23-09-2024 20:30:07",
-      "statusRead": true
+      "idUser": "1",
+      "createAt": "26-09-2024 22:08:36",
+      "statusRead": true,
+      "accepted": true
     }
   ],
   "company": [
@@ -481,6 +516,7 @@
     {
       "id": "1",
       "email": "duy@gmail.com",
+      "phone": "1111111",
       "password": "12345",
       "token": "Bga8ngF66xCgFdVJdAGx",
       "isUser": true
@@ -488,7 +524,8 @@
     {
       "id": "2",
       "email": "ngoc@gmail.com",
-      "password": "12345",
+      "password": "Ngoc@12345",
+      "phone": "2222222",
       "token": "kfXsp38YCVhvy9Vcm7xD",
       "isUser": true
     }

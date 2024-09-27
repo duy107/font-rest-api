@@ -1,10 +1,10 @@
 import { Button } from "antd";
 import { changeStatusCv, detailCv } from "../../services/cvService";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FaRegEye } from "react-icons/fa6";
 import Modal from 'react-bootstrap/Modal';;
 
-function CvDetail({ id , reload}) {
+function CvDetail({ id, reload }) {
     const [show, setShow] = useState(false);
     const [detailCV, setDetailCV] = useState({});
     const fetchApi = async () => {
@@ -14,6 +14,16 @@ function CvDetail({ id , reload}) {
         }
     }
 
+    const handleAccept = async () => {
+        const options = {
+            "accepted": true
+        }
+        const res = await changeStatusCv(id, options);
+        if (res) {
+            setShow(false);
+            reload();
+        }
+    }
     const handleClose = () => {
         setShow(false);
         reload();
@@ -44,6 +54,7 @@ function CvDetail({ id , reload}) {
                     )}
                 </Modal.Body>
                 <Modal.Footer>
+                    <Button onClick={handleAccept}>Accept</Button>
                     <Button type="primary" onClick={handleClose}>
                         Close
                     </Button>

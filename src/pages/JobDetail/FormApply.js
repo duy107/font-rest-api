@@ -8,6 +8,7 @@ import { getCookie } from "../../helpers/cookie";
 
 function FormApply({ job }) {
     const email = getCookie("email-user");
+    const idUser = getCookie("id-user");
     const dispatch = useDispatch();
     const status = useSelector(state => state.formApply);
     const { Option } = Select;
@@ -24,6 +25,7 @@ function FormApply({ job }) {
     const handleSubmit = async (e) => {
         e.idJob = job.infor[0].id;
         e.idCompany = job.infor[0].idCompany;
+        e.idUser = idUser;
         e.createAt = getTimeCurrent();
         const res = await createCV(e);
         setSpin(true);

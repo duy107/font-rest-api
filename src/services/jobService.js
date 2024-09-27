@@ -19,6 +19,7 @@ export const getListJob = async (id) => {
     return res;
 }
 
+
 export const createJob = async (options) => {
     const res = await post("jobs", options);
     return res;

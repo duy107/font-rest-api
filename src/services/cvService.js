@@ -5,8 +5,9 @@ export const createCV = async (options) => {
     return res;
 }
 
-export const getListCv = async (id) => {
-    const res = await get(`cv?idCompany=${id}`);
+export const getListCv = async (id, idUser = '') => {
+    const user = (idUser) ? `&idUser=${idUser}` : '';
+    const res = await get(`cv?idCompany=${id}${user}`);
     return res;
 }
 
@@ -22,5 +23,15 @@ export const deleteCv = async(id) => {
 
 export const detailCv = async (id) => {
     const res = await get(`cv/${id}`);
+    return res;
+}
+
+export const getListCvByUser = async (id) => {
+    const res = await get(`cv?idUser=${id}`);
+    return res;
+}
+
+export const getListCvByJob = async (id) => {
+    const res = await get(`cv?idJob=${id}`);
     return res;
 }

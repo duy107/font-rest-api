@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { FloatingLabel, Form} from 'react-bootstrap';
+import { FloatingLabel, Form } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import { checkEmail, resetPassword } from '../../services/userService';
+import { checkEmail, checkExits, resetPassword } from '../../services/userService';
 import { notification } from 'antd';
 
 function ForgetPassword() {
@@ -14,19 +14,25 @@ function ForgetPassword() {
 
     const handleConfirm = async (e) => {
         e.preventDefault();
+        const pattern = /(?=.*\d)(?=.*\W)(?=.*[A-Z]).{8,}/;
         const email = e.target[0].value;
         const newPass = e.target[1].value;
         const confirmNewPass = e.target[2].value;
-        const isExist = await checkEmail(email);
+        const isExist = await checkExits('email', email);
         if (isExist.length === 0) {
             api.error({
                 message: `Email không tồn tại!`,
                 duration: 1,
             });
+        } else if (!pattern.test(newPass)) {
+            api.error({
+                message: `Mật khẩu tối thiểu 8 ký tự (ít nhất 1 số, 1 ký tự đặc biệt, 1 chữ hoa)!`,
+                duration: 2,
+            });
         } else if (newPass !== confirmNewPass) {
             api.error({
                 message: `Mật khẩu không khớp!`,
-                duration: 1,
+                duration: 2,
             });
         } else {
             const id = isExist[0].id;
@@ -34,10 +40,10 @@ function ForgetPassword() {
                 "password": newPass
             }
             const res = await resetPassword(id, options);
-            if(res){
+            if (res) {
                 api.success({
                     message: `Thay đổi mật khẩu thành công!`,
-                    duration: 1,
+                    duration: 2,
                 });
                 setTimeout(() => {
                     setShow(false)
@@ -49,12 +55,12 @@ function ForgetPassword() {
     return (
         <>
             {contextHolder}
-           
-               <div className='login__form--forgetPass'>
-                    <Button variant="text" onClick={handleShow} className="p-0 border-0 text-decoration-underline">
-                        Forgot Password?
-                    </Button>
-               </div>
+
+            <div className='login__form--forgetPass'>
+                <Button variant="text" onClick={handleShow} className="p-0 border-0 text-decoration-underline">
+                    Forgot Password?
+                </Button>
+            </div>
             <Modal show={show} onHide={handleClose} centered>
                 <Modal.Header closeButton>
                     <Modal.Title>

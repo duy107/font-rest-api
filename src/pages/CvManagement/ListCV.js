@@ -56,7 +56,7 @@ function ListCV() {
             title: "Trạng thái",
             key: "statusRed",
             render: (_, record) => (
-                record.statusRead ? (<Tag color="green">Đã đọc</Tag>) : <Tag>Chưa đọc</Tag>
+                record.accepted ? (<Tag color="green">Đã chấp nhận</Tag>) : record.statusRead ? (<Tag color="blue">Đã đọc</Tag>) : <Tag>Chưa đọc</Tag>
             )
         }
         ,

@@ -15,7 +15,6 @@ function SkillList() {
         }
         fetchApi();
     }, []);
-
     return (
         <>
             <div className="tag__list">

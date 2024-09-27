@@ -23,6 +23,7 @@ function CreateJob() {
         }
         fetchApi();
     }, [])
+    
     useEffect(() => {
         const fetchApi = async () => {
             const res = await getListCity();

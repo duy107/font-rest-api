@@ -1,4 +1,4 @@
-import { Card, Col} from "antd";
+import { Col } from "antd";
 import { Link } from "react-router-dom";
 import "./style.scss";
 function CompanyItem({item}) {

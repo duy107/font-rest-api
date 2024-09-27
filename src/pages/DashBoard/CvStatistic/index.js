@@ -14,11 +14,12 @@ function CvStatistic() {
                 let obj = {
                     total: 0,
                     statusTrue: 0,
-                    statusFalse: 0
+                    statusFalse: 0, 
+                    statusAccept: 0
                 }
                 obj.total = res.length;
                 res.forEach(item => {
-                    item.statusRead ? obj.statusTrue++ : obj.statusFalse++;
+                    item.accepted ? obj.statusAccept++ : item.statusRead ? obj.statusTrue++ : obj.statusFalse++;
                 })
                 setData(obj);
             }
@@ -32,6 +33,7 @@ function CvStatistic() {
                     <div>Số lượng CV: <strong>{data.total}</strong></div>
                     <div>Số CV đã đọc: <strong>{data.statusTrue}</strong></div>
                     <div>Số CV chưa đọc: <strong>{data.statusFalse}</strong></div>
+                    <div>Số CV đã chấp nhận: <strong>{data.statusAccept}</strong></div>
                 </div>
             </Card>}
         </>

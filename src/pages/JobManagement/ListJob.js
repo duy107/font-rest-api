@@ -10,7 +10,6 @@ import DeleteJob from "./DeleteJob";
 function ListJob() {
     const idCompany = getCookie("id");
     const [listJob, setListJob] = useState([]);
-
     const fetchApi = async () => {
         const data = await getListJob(idCompany);
         if (data) {

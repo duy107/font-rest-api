@@ -1,4 +1,4 @@
-import { get, patch } from "../utilities/request";
+import { get, patch, post } from "../utilities/request";
 
 export const login = async (email, password="") => {
     let pass = "";
@@ -9,12 +9,16 @@ export const login = async (email, password="") => {
     return res;
 }
 
-export const checkEmail = async (email="") => {
-    const res = await get(`users?email=${email}`);
+export const checkExits = async(key, value) => {
+    const res = get(`users?${key}=${value}`);
+    return res;
+}
+export const resetPassword = async (id, options) => {
+    const res = await patch(`users/${id}`, options);
     return res;
 }
 
-export const resetPassword = async (id, options) => {
-    const res = await patch(`users/${id}`, options);
+export const createUser = async(options) => {
+    const res = await post('users', options);
     return res;
 }
