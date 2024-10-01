@@ -1,5 +1,5 @@
 // const api = "http://localhost:3002/";
-const api = "https://react-alpha-bice.vercel.app/";
+const api = "http://react-alpha-bice.vercel.app/";
 export const get = async (path) => {
     const res = await fetch(`${api}${path}`);
     const data = await res.json();
