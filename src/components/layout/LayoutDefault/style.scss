@@ -1,10 +1,15 @@
-.container {
-    width: 100%;
-    max-width: 1140px;
-    margin-left: auto;
-    margin-right: auto;
-}
+// .container {
+//     width: 100%;
+//     max-width: 1140px;
+//     margin-left: auto;
+//     margin-right: auto;
+// }
+// @import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Dots:wght@400..700&display=swap');
 
+body{
+    font-family: "Edu AU VIC WA NT Dots", "cursive";
+}
 a {
     text-decoration: none;
 }
@@ -14,7 +19,6 @@ a {
     padding: 0;
     box-sizing: border-box;
 }
-
 h1 {
     margin: 15px 0;
 }

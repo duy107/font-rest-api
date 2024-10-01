@@ -1,12 +1,16 @@
 import { Outlet } from "react-router-dom";
+import {Container} from "react-bootstrap"
 import "./style.scss";
 function Main() {
     return (  
         <>
             <main className="main">
-                <div className="container">
+                {/* <div className="contaier">
                     <Outlet />
-                </div>
+                </div> */}
+                <Container>
+                    <Outlet/>
+                </Container>
             </main>
         </>
     );

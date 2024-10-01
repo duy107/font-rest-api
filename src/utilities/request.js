@@ -1,4 +1,5 @@
-const api = "http://localhost:3002/";
+// const api = "http://localhost:3002/";
+const api = "https://demo-react-tawny.vercel.app/";
 export const get = async (path) => {
     const res = await fetch(`${api}${path}`);
     const data = await res.json();

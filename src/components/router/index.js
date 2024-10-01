@@ -13,13 +13,11 @@ import InforCompany from "../../pages/InforCompany";
 import JobManagement from "../../pages/JobManagement";
 import CreateJob from "../../pages/CreateJob";
 import CvManagement from "../../pages/CvManagement";
-import CvDetail from "../../pages/CvDetail";
 import HomeUser from "../../pages/Home/HomeUser";
 import HomeAdmin from "../../pages/Home/HomeAdmin";
 import SearchJob from "../../pages/SearchJob";
 import UserSignin from "../../pages/Signin/UserSignin";
 import CompanySigin from "../../pages/Signin/CompanySignin";
-import ForgotPassword from "../../pages/ForgetPassword";
 
 export const router = [
     {
