@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { FloatingLabel, Form } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import { checkEmail, checkExits, resetPassword } from '../../services/userService';
+import { checkEmail, checkExits, forgot } from '../../services/client/user.services';
 import { notification } from 'antd';
 import { Link } from 'react-router-dom';
 

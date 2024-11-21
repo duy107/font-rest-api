@@ -4,7 +4,6 @@ import { Link, NavLink } from "react-router-dom";
 import { CiUser } from "react-icons/ci";
 import { IoIosLogOut } from "react-icons/io";
 import { FaUser } from "react-icons/fa";
-import { MdManageAccounts } from "react-icons/md";
 import { useSelector } from "react-redux";
 import { Button } from "antd";
 import { useEffect, useState } from "react";
@@ -24,13 +23,16 @@ function Header() {
                 if (res.code !== 200) {
                     cookie.deleteCookie("tokenUser");
                     setCheck(false);
-                } 
+                }
             } catch (error) {
                 console.log(error);
             }
         };
-        fetchApi();
+        if (tokenUser) {
+            fetchApi();
+        }
     }, []);
+    console.log(token, state, check);
     return (
         <>
             <header className="header">
@@ -40,10 +42,10 @@ function Header() {
                             <img src="http://res.cloudinary.com/dxx1lgamz/image/upload/v1732164826/lydd0molalmluj0xfy02.jpg" alt="logo" />
                         </Link>
                         <div className="header__actions">
-                            {(tokenUser && state && check) || (token && state && check) ? (
-                                tokenUser && state ? (
+                            {((tokenUser && state && check) || (token && state && check)) ? (
+                                tokenUser && state && check ? (
                                     <>
-                                        <Link to={"/infor"}><Button iconPosition="start"  icon={<FaUser/>}>{infor.fullName}</Button></Link>
+                                        <Link to={"/infor"}><Button iconPosition="start" icon={<FaUser />}>{infor.fullName}</Button></Link>
                                         <Link to={"/logout"}><Button icon={<IoIosLogOut />}>Đăng xuất</Button></Link>
                                     </>
                                 ) : (

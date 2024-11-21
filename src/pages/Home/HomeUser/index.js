@@ -1,10 +1,10 @@
 import { Button, notification } from "antd";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { getListCvByUser } from "../../../services/cvService";
-import { getDetailCompany1 } from "../../../services/companyService";
-import { getDetailJob1 } from "../../../services/jobService";
-import { del, get } from "../../../utilities/request";
+// import { getListCvByUser } from "../../../services/cvService";
+// import { getDetailCompany1 } from "../../../services/companyService";
+// import { getDetailJob1 } from "../../../services/jobService";
+// import { del, get } from "../../../utilities/request";
 import { useSelector } from "react-redux";
 import * as cookie from "../../../helpers/cookie";
 import { auth } from "../../../services/client/auth.services";

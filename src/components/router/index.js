@@ -1,17 +1,17 @@
 import LayoutDefault from "../layout/LayoutDefault";
 import JobDetail from "../../views/client/pages/job/detail.job";
-import Company from "../../pages/Company";
-import CompanyDetail from "../../pages/Company/CompanyDetail";
-import Register from "../../pages/Register";
+// import Company from "../../pages/Company";
+// import CompanyDetail from "../../pages/Company/CompanyDetail";
+import Register from "../../views/client/pages/user/register";
 import Signin from "../../pages/Signin";
 import Logout from "../../pages/Logout";
 import LayoutAdmin from "../layout/LayoutAdmin/index";
 import PrivateRouter from "../PrivateRouter"
-import DashBoard from "../../pages/DashBoard";
-import InforCompany from "../../pages/InforCompany";
-import JobManagement from "../../pages/JobManagement";
-import CreateJob from "../../pages/CreateJob";
-import CvManagement from "../../pages/CvManagement";
+import DashBoard from "../../views/admin/pages/dashboard";
+import InforCompany from "../../views/admin/pages/company/infor";
+import JobManagement from "../../views/admin/pages/job";
+import CreateJob from "../../views/admin/pages/job/CreateJob";
+import CvManagement from "../../views/admin/pages/cv";
 import HomeUser from "../../pages/Home/HomeUser";
 import HomeAdmin from "../../pages/Home/HomeAdmin";
 import Infor from "../../views/client/pages/user/infor";
@@ -37,29 +37,29 @@ export const router = [
             },
             {
                 path: "search-job",
-                element: <SearchJob />
+                element: <AuthClient> <SearchJob /> </AuthClient>
             },
             {
                 path: "jobs",
-                element: <Result />
+                element: <AuthClient> <Result /> </AuthClient>
             },
             {
                 path: "jobs/:slug",
-                element: <JobDetail/>
+                element: <AuthClient><JobDetail/></AuthClient>
             },
             {
                 path: "infor",
                 element: <AuthClient> <Infor /> </AuthClient>
             }
             ,
-            {
-                path: "company",
-                element: <Company />
-            },
-            {
-                path: "company/:id",
-                element: <CompanyDetail />
-            },
+            // {
+            //     path: "company",
+            //     element: <Company />
+            // },
+            // {
+            //     path: "company/:id",
+            //     element: <CompanyDetail />
+            // },
             {
                 path: "register",
                 element: <Register />

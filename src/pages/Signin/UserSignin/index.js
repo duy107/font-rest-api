@@ -1,13 +1,10 @@
-import { Button, Form, Input, message, Upload } from "antd";
+import { Button, Form, Input, message } from "antd";
 import { loginPost } from "../../../services/client/user.services";
-import * as cookie from "../../../helpers/cookie";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { FaLock, FaUser } from "react-icons/fa";
 import ForgetPassword from "../../ForgetPassword";
-import { UploadOutlined } from "@ant-design/icons"
 import { checkAuthen } from "../../../actions/checkLogin";
-import { infor } from "../../../actions/inforUser";
 function SiginUser() {
     const [messageApi, contextHolder] = message.useMessage();
     const navigate = useNavigate();

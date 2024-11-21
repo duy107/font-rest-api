@@ -1,13 +1,13 @@
 import CompanyList from "../../../../components/CompanyList";
-import SearchForm from "./searchForm"
 import SkillList from "../../../../components/SkillList";
+import SearchForm from "./searchForm";
 
 function SearchJob() {
     return (
         <>
             <SearchForm />
-            <SkillList />
-            <CompanyList />
+            {/* <SkillList />
+            <CompanyList /> */}
         </>
     );
 }

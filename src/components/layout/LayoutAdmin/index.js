@@ -20,7 +20,7 @@ function LayoutAdmin() {
             <Layout>
                 <header className="header__admin">
                     <div className={"header__admin__logo " + (collapsed && "header__admin__logo--collapsed")}>
-                        <img src={!collapsed ? "http://res.cloudinary.com/dxx1lgamz/image/upload/v1732164826/lydd0molalmluj0xfy02.jpg" : "http://res.cloudinary.com/dxx1lgamz/image/upload/v1732164826/lydd0molalmluj0xfy02.jpg"} alt="logo" />
+                        {/* <img src={!collapsed ? "http://res.cloudinary.com/dxx1lgamz/image/upload/v1732164826/lydd0molalmluj0xfy02.jpg" : "http://res.cloudinary.com/dxx1lgamz/image/upload/v1732164826/lydd0molalmluj0xfy02.jpg"} alt="logo" /> */}
                     </div>
                     <div className="header__admin__navs">
                         <div className="header__admin__navs__left">
@@ -29,7 +29,7 @@ function LayoutAdmin() {
                             </div>
                         </div>
                         <div className="header__admin__navs__right">
-                            <Link to={"/home-admin"}><Button icon={<IoHomeOutline />}>Trang chủ</Button></Link>
+                            <Link to={"/"}><Button icon={<IoHomeOutline />}>Trang chủ</Button></Link>
                             <Link to={"/logout"}><Button icon={<IoIosLogOut />}>Đăng xuất</Button></Link>
                         </div>
                     </div>
