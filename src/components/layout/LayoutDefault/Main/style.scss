@@ -1,4 +1,23 @@
-.main{
+.main {
     margin: 70px 0px;
     min-height: 564px;
+
+}
+.input-container {
+    width: 200px !important;
+}
+
+.label-container {
+    display: none !important;
+}
+
+.image-preview {
+    height: 200px !important;
+    width: 200px !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+}
+
+.image-preview-item {
+    background-size: cover !important;
 }

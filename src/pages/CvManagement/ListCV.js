@@ -1,20 +1,16 @@
-import { Button, Table, Tag } from "antd";
-import { getCookie } from "../../helpers/cookie";
-import { getListCv } from "../../services/cvService";
-import {useState, useEffect} from "react";
+import moment from "moment";
+import { Button, notification, Table, Tag } from "antd";
+import { useState, useEffect } from "react";
 import DeleteCV from "./DeleteCV";
-import NameJob from "./NameJob";
 import CvDetail from "../CvDetail";
-
+import { listCV } from "../../services/admin/cv-management";
 function ListCV() {
-    const idCompany = getCookie("id");
-    const [listCV, setListCV] = useState([]);
+    const [api, contextHolder] = notification.useNotification();
+    const [listCVs, setListCVs] = useState([]);
 
-    const fetchApi =  async () => {
-        const res = await getListCv(idCompany);
-        if(res){
-            setListCV(res);
-        }
+    const fetchApi = async () => {
+        const res = await listCV();
+        setListCVs(res);
     }
     useEffect(() => {
         fetchApi();
@@ -23,34 +19,50 @@ function ListCV() {
     const handleReload = () => {
         fetchApi();
     }
+    const displayNotification = (data) => {
+        const {type, infor} = data;
+        api[type](infor);
+    }
     const columns = [
         {
             title: 'Tên jobs',
             dataIndex: "idJob",
             key: 'idJob',
             render: (_, record) => (
-                <NameJob item={record}/>
+                <span>{record.jobInfor.name}</span>
             )
         },
         {
             title: 'Họ tên',
             dataIndex: "name",
-            key: 'name'
+            key: 'name',
+            render: (_, record) => (
+                <span>{record.userInfor.fullName}</span>
+            )
         },
         {
             title: 'Email',
             dataIndex: 'email',
             key: 'email',
+            render: (_, record) => (
+                <span>{record.userInfor.email}</span>
+            )
         },
         {
             title: 'Số điện thoại',
             dataIndex: "phone",
-            key: 'phone'
+            key: 'phone',
+            render: (_, record) => (
+                <span>{record.userInfor.phone}</span>
+            )
         },
         {
             title: 'Ngày gửi',
-            dataIndex: "createAt",
-            key: 'createAt'
+            dataIndex: "createdAt",
+            key: 'createdAt',
+            render: (_, record) => (
+                <span>{moment(record.createdAt).format("DD/MM/YYYY HH:mm:ss")}</span>
+            )
         },
         {
             title: "Trạng thái",
@@ -66,11 +78,10 @@ function ListCV() {
             render: (_, record) => {
                 return (
                     <>
-                        <div style={{marginBottom: 10}}>
-                            {/* <Link to={`/detail-cv/${record.id}`}><Button icon={<FaRegEye/>}></Button></Link> */}
-                            <CvDetail id={record.id} reload={handleReload}/>
+                        <div style={{ marginBottom: 10 }}>
+                            <CvDetail item={record} reload={handleReload} />
                         </div>
-                        <DeleteCV item={record} reload={handleReload}/>
+                        <DeleteCV item={record} reload={handleReload} displayNotification={displayNotification} />
                     </>
                 )
             }
@@ -78,7 +89,8 @@ function ListCV() {
     ];
     return (
         <>
-            <Table columns={columns} dataSource={listCV} rowKey={"id"}/>
+             {contextHolder}
+            <Table columns={columns} dataSource={listCVs} rowKey={"id"} />
         </>
     );
 }

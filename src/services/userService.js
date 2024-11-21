@@ -22,3 +22,8 @@ export const createUser = async(options) => {
     const res = await post('users', options);
     return res;
 }
+
+export const loginPost = async(data) => {
+    const res = await post(`login`, data);
+    return res;
+}

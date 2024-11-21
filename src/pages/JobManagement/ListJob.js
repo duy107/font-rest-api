@@ -1,27 +1,29 @@
 import { useEffect, useState } from "react";
-import { getCookie } from "../../helpers/cookie";
-import { getListJob } from "../../services/jobService";
-import { Button, Table, Tag } from "antd";
-import { Link } from "react-router-dom";
-import { FaRegEye } from "react-icons/fa";
+import moment from "moment";
+import { listJob as getListJob} from "../../services/admin/job-management.services";
+import {Table, Tag, notification} from "antd";
 import EditJob from "./EditJob";
 import DeleteJob from "./DeleteJob";
+import DetailJob from "./DetailJob";
 
 function ListJob() {
-    const idCompany = getCookie("id");
+    const [api, contextHolder] = notification.useNotification();
     const [listJob, setListJob] = useState([]);
+    
     const fetchApi = async () => {
-        const data = await getListJob(idCompany);
-        if (data) {
-            setListJob(data);
-        }
+        const data = await getListJob();
+        setListJob(data || []);
+    }
+    const displayNotification = (data) => {
+        const {type, infor} = data;
+        api[type](infor);
     }
     useEffect(() => {
         fetchApi();
     }, []);
     const handleReload = () => {
         fetchApi();
-    }
+    };
     const columns = [
         {
             title: 'Tên jobs',
@@ -34,24 +36,22 @@ function ListJob() {
             key: 'tags',
             render: (_, record) =>
                 (record.tags || []).map((item, index) => (
-                    <Tag key={index} color="blue" style={{marginBottom: 10}}>{item}</Tag>
+                    <Tag key={index} color="blue" style={{marginBottom: 10}}>{item.name}</Tag>
                 ))
         },
         {
             title: 'Mức lương',
-            key: 'salary',
-            render: (_, record) => {
-                return record.salary;
-            }
+            dataIndex: "salary",
+            key: 'salary'
         },
         {
             title: 'Thời gian',
-            key: 'typeRoom',
+            key: 'time',
             render: (_, record) => (
                 <>
-                    <small>Ngày tạo:{record.createAt}</small>
+                    <small>Ngày tạo: {moment(record.createAt).format("DD/MM/YYYY HH:mm:ss")}</small>
                     <br />
-                    <small>Cập nhật: {record.updateAt}</small>
+                    <small>Cập nhật: {moment(record.updateAt).format("DD/MM/YYYY HH:mm:ss")}</small>
                 </>
             )
         },
@@ -70,9 +70,9 @@ function ListJob() {
             render: (_, record) => {
                 return (
                     <>
-                        <div><Link to={`/detail-job/${record.id}`}><Button icon={<FaRegEye/>}></Button></Link></div>
-                        <div style={{margin: "10px 0px"}}><EditJob item={record} reload={handleReload} /></div>
-                        <div> <DeleteJob item={record} reload={handleReload} /></div>
+                        <div><DetailJob item={record} reload={handleReload}/></div>
+                        <div style={{margin: "10px 0px"}}><EditJob item={record} reload={handleReload} displayNotification={displayNotification}/></div>
+                        <div> <DeleteJob item={record} reload={handleReload} displayNotification={displayNotification}/></div>
                     </>
                 )
             }
@@ -80,6 +80,7 @@ function ListJob() {
     ];
     return (
         <>
+            {contextHolder}
             <Table dataSource={listJob} columns={columns} rowKey={"id"} />
         </>
     );

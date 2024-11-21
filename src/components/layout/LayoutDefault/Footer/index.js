@@ -2,8 +2,6 @@ import "./style.scss";
 import { Col, Container, Row } from "react-bootstrap";
 import { CiFacebook } from "react-icons/ci";
 import { FaGithub, FaYoutube  } from "react-icons/fa";
-
-import img from "../../../../assets/images/anh02.jpg";
 import "./style.scss";
 function Footer() {
     return (
@@ -12,9 +10,9 @@ function Footer() {
                 <Container>
                     <Row className="p-3">
                         <Col className="text-center mb-4" xl={4} lg={4} md={6} sm={12}>
-                            <div class="infor__company">
+                            <div className="infor__company">
                                 <div className="infor__company__logo">
-                                    <img src={img} alt="logojj"/>
+                                    <img src="http://res.cloudinary.com/dxx1lgamz/image/upload/v1732164826/lydd0molalmluj0xfy02.jpg" alt="logojj"/>
                                 </div>
                                 <div className="infor__company__title">Công ty ABC</div>
                                 <div className="infor__company__address">Dương luong</div>

@@ -27,9 +27,7 @@ function SearchList({ data }) {
                 dataFinal.length > 0 ? (
                     <Row gutter={[20, 20]}>
                         {dataFinal.map(item => (
-                            <Col span={6} key={item.id}>
-                                <JobItem item={item}/>
-                            </Col>
+                                <JobItem item={item} key={item.id}/>
                         ))}
                     </Row>
                 ) : (

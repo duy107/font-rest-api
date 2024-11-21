@@ -1,14 +1,22 @@
 import { Outlet, useNavigate } from "react-router-dom";
 import { Tabs, Tab } from "react-bootstrap";
 import "./style.scss";
+import { loginGet } from "../../services/admin/company.services";
+import { useSelector } from "react-redux";
 
 function Signin() {
+    const isLogin = async () => {
+        const res = await loginGet();
+        if (res.code === 400) {
+            navigate("/admin/overview");
+            return;
+        }
+    }
+    isLogin();
     const navigate = useNavigate();
-
     const handleSelect = (key) => {
-        navigate(key === "user" ? "user_signin" : "company_signin");
+        navigate(key === "user" ? "/login" : "/admin/login");
     };
-
     return (
         <>
             <div className="login">

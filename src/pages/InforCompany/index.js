@@ -1,14 +1,13 @@
 import { Button, Card, Col, Form, Input, message, Row } from "antd";
 import { useEffect, useState } from "react";
-import { getCookie } from "../../helpers/cookie";
-import { getDetailCompany1, updateCompany } from "../../services/companyService";
+import { companyInfor, update } from "../../services/admin/company.services";
+import Tinymce from "../Tinymce";
 
 function InforCompany() {
     const [isEdit, setIsEdit] = useState(false);
-    const idCompany = getCookie("id");
-    const [infor, setInfor] = useState({});
+    const [infor, setInfor] = useState(null);
     const [form] = Form.useForm();
-    const [messageApi, contextHolder] = message.useMessage(); 
+    const [messageApi, contextHolder] = message.useMessage();
     const rules = [
         {
             required: true,
@@ -16,10 +15,10 @@ function InforCompany() {
         },
     ]
     const fetchApi = async () => {
-        const res = await getDetailCompany1(idCompany);
-        if (res) {
-            setInfor(res);
-            form.setFieldsValue(res);
+        const inforCompany = await companyInfor();
+        if (inforCompany) {
+            setInfor(inforCompany);
+            form.setFieldsValue(inforCompany);
         }
     }
     useEffect(() => {
@@ -34,11 +33,17 @@ function InforCompany() {
         setIsEdit(true);
     }
     const handleSubmit = async (e) => {
-        const res = await updateCompany(idCompany, e);
-        if (res) {
-            messageApi.success("Cập nhật thành công");
+        console.log(e)
+        const res = await update(e);
+        if (res.code === 200) {
+            setInfor(e);
+            messageApi.success(res.message);
             setIsEdit(false);
-            form.setFieldValue(e);
+            form.setFieldsValue(e);
+        } else {
+            messageApi.error(res.message);
+            form.setFieldsValue(infor);
+            setIsEdit(false);
         }
     }
     return (
@@ -50,7 +55,7 @@ function InforCompany() {
                 <Form form={form} layout="vertical" disabled={!isEdit} onFinish={handleSubmit}>
                     <Row gutter={[20, 20]}>
                         <Col span={24}>
-                            <Form.Item label="Tên công ty" name="companyName" rules={rules}>
+                            <Form.Item label="Tên công ty" name="name" rules={rules}>
                                 <Input />
                             </Form.Item>
                         </Col>
@@ -75,7 +80,7 @@ function InforCompany() {
                             </Form.Item>
                         </Col>
                         <Col span={8}>
-                            <Form.Item label="Thời gian làm việc" name="workingtime">
+                            <Form.Item label="Thời gian làm việc" name="workingTime">
                                 <Input />
                             </Form.Item>
                         </Col>
@@ -86,12 +91,7 @@ function InforCompany() {
                         </Col>
                         <Col span={24}>
                             <Form.Item label="Mô tả ngắn" name="description">
-                                <Input.TextArea />
-                            </Form.Item>
-                        </Col>
-                        <Col span={24}>
-                            <Form.Item label="Mô tả chi tiết" name="detail">
-                                <Input.TextArea rows={4} />
+                                <Tinymce isEdit={isEdit} />
                             </Form.Item>
                         </Col>
                         {isEdit && <Col span={4}>

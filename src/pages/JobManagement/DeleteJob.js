@@ -1,11 +1,27 @@
 import { Button, Popconfirm } from "antd";
 import { AiOutlineDelete } from "react-icons/ai";
-import { deleteJob } from "../../services/jobService";
-function DeleteJob({item, reload}) {
+import { del } from "../../services/admin/job-management.services";
+function DeleteJob({item, reload, displayNotification}) {
     const handleDelete = async () => {
-        const res = await deleteJob(item.id);
-        if(res){
+        const id = item._id;
+        const res = await del({id});
+        if(res.status === 200){
+            displayNotification({
+                type: "success",
+                infor: {
+                    message: res.data.message,
+                    duration: 2
+                }
+            })
             reload();
+        }else{
+            displayNotification({
+                type: "error",
+                infor: {
+                    message: res.data.message,
+                    duration: 2
+                }
+            })
         }
     }
     return (

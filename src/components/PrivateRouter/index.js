@@ -5,7 +5,7 @@ function PrivateRouter() {
     const token = cookie.getCookie("token");
     return (
         <>
-            {token ? (<Outlet />) : (<Navigate to={"/signin"} />)}
+            {token ? (<Outlet />) : (<Navigate to={"/admin/login"} />)}
         </>
     );
 }

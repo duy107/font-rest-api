@@ -25,13 +25,11 @@ function SearchForm() {
         fethcApi();
     }, [])
 
-    // handle submit form
     const handleSubmit = (e) => {
         let city = e.city || "";
         city = e.city === "All" ? "" : city;
         navigate(`/result?city=${city}&keyword=${e.keyword || ""}`);
     }
-
     return (
         <>
             <h1>1000+ IT JOBS FOR DEVELOPERs</h1>

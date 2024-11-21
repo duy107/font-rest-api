@@ -1,41 +1,15 @@
 import { Card } from "antd";
-import { getCookie } from "../../../helpers/cookie";
-import { useState, useEffect } from "react";
-import { getListCv } from "../../../services/cvService";
-
-function CvStatistic() {
-    const idCompany = getCookie("id");
-    const [data, setData] = useState({});
-
-    useEffect(() => {
-        const fetchApi = async () => {
-            const res = await getListCv(idCompany);
-            if (res) {
-                let obj = {
-                    total: 0,
-                    statusTrue: 0,
-                    statusFalse: 0, 
-                    statusAccept: 0
-                }
-                obj.total = res.length;
-                res.forEach(item => {
-                    item.accepted ? obj.statusAccept++ : item.statusRead ? obj.statusTrue++ : obj.statusFalse++;
-                })
-                setData(obj);
-            }
-        }
-        fetchApi();
-    }, [])
+function CvStatistic({ cvStatistic }) {
     return (
         <>
-            {data && <Card title="CV" className="card__item">
+            <Card title="CV" className="card__item">
                 <div className="card__infor">
-                    <div>Số lượng CV: <strong>{data.total}</strong></div>
-                    <div>Số CV đã đọc: <strong>{data.statusTrue}</strong></div>
-                    <div>Số CV chưa đọc: <strong>{data.statusFalse}</strong></div>
-                    <div>Số CV đã chấp nhận: <strong>{data.statusAccept}</strong></div>
+                    <div>Số lượng CV: <strong>{cvStatistic.total}</strong></div>
+                    <div>Số CV đã đọc: <strong>{cvStatistic.statusTrue}</strong></div>
+                    <div>Số CV chưa đọc: <strong>{cvStatistic.statusFalse}</strong></div>
+                    <div>Số CV đã chấp nhận: <strong>{cvStatistic.statusAccept}</strong></div>
                 </div>
-            </Card>}
+            </Card>
         </>
     );
 }

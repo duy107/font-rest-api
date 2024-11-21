@@ -1,51 +1,56 @@
 import { Button, Card, Col, Form, Input, message, Row, Select, Switch } from "antd";
 import { useState, useEffect } from "react";
-import { getListTag } from "../../services/tagService";
-import { getListCity } from "../../services/cityService";
-import { getCookie } from "../../helpers/cookie";
-import { createJob } from "../../services/jobService";
-import { getTimeCurrent } from "../../helpers/getTime";
 import GoBack from "../../components/GoBack"
 import { useNavigate } from "react-router-dom";
+import { listTag } from "../../services/admin/tag.services";
+import { listCity } from "../../services/admin/city.services";
+import Tinymce from "../Tinymce";
+import { create } from "../../services/admin/job-management.services";
 function CreateJob() {
     const [tags, setTags] = useState([]);
     const [city, setCity] = useState([]);
     const [messageApi, contextHolder] = message.useMessage();
     const [form] = Form.useForm();
-    const idCompany = getCookie("id");
+    useEffect(() => {
+        const fetchApi = async () => {
+            const [listTags, listCities] = await Promise.all([listTag(), listCity()]);
+            if (listTags.code === 200) {
+                const tags = listTags.listTag.reduce((total, item) => {
+                    return [
+                        ...total,
+                        {
+                            label: item.name,
+                            value: item._id
+                        }
+                    ]
+                }, []);
+                setTags(tags);
+            }
+            if (listCities.code === 200) {
+                const cities = listCities.listCity.reduce((total, item) => {
+                    return [
+                        ...total,
+                        {
+                            label: item.name,
+                            value: item._id
+                        }
+                    ]
+                }, []);
+                setCity(cities);
+            }
+        }
+        fetchApi();
+    }, []);
     const navigate = useNavigate();
-    useEffect(() => {
-        const fetchApi = async () => {
-            const res = await getListTag();
-            if (res) {
-                setTags(res);
-            }
-        }
-        fetchApi();
-    }, [])
-    
-    useEffect(() => {
-        const fetchApi = async () => {
-            const res = await getListCity();
-            if (res) {
-                setCity(res);
-            }
-        }
-        fetchApi();
-    }, [])
 
     const handleSubmit = async (e) => {
-        e.idCompany = idCompany;
         e.salary = `${e.salary}$`;
-        e.createAt = getTimeCurrent();
-        e.updateAt = getTimeCurrent();
-        const res = await createJob(e);
-        if (res) {
-            messageApi.success("Tạo thành công");
+        const res = await create(e);
+        if(res.code === 200){
             form.resetFields();
-            navigate(-1);
+            messageApi.success(res.message);
         }else{
-            messageApi.error("Tạo thất bại");
+            messageApi.error(res.message);
         }
     }
     return (
@@ -55,38 +60,38 @@ function CreateJob() {
             <Card title="Tạo job mới">
                 <Form layout="vertical" onFinish={handleSubmit}>
                     <Row gutter={[20, 20]}>
-                        <Col span={24}>
+                        <Col span={16}>
                             <Form.Item label="Tên job" name="name">
                                 <Input></Input>
                             </Form.Item>
                         </Col>
-                        <Col span={19} >
-                            <Form.Item label="Tags" name="tags">
-                                <Select mode="multiple" options={tags} />
-                            </Form.Item>
-                        </Col>
-                        <Col span={5} >
+                        <Col span={4} >
                             <Form.Item label="Lương" name="salary">
                                 <Input addonAfter="$"></Input>
                             </Form.Item>
                         </Col>
-                        <Col span={24}>
-                            <Form.Item label="Thành phố" name="city">
+                        <Col span={4}>
+                            <Form.Item label="Trạng thái" name="status" valuePropName="checked">
+                            <Switch checkedChildren="Bật" unCheckedChildren="Tắt" defaultValue={true} />
+                            </Form.Item>
+                        </Col>
+                        <Col span={12} >
+                            <Form.Item label="Tags" name="tags">
+                                <Select mode="multiple" options={tags} />
+                            </Form.Item>
+                        </Col>
+                        <Col span={12}>
+                            <Form.Item label="Thành phố" name="cities">
                                 <Select mode="multiple" options={city} />
                             </Form.Item>
                         </Col>
                         <Col span={24} >
                             <Form.Item label="Mô tả" name="description">
-                                <Input.TextArea rows={6}></Input.TextArea>
+                                <Tinymce isEdit={true}/>
                             </Form.Item>
                         </Col>
                         <Col span={24}>
-                            <Form.Item label="Trạng thái" name="status"  valuePropName="checked">
-                            <Switch checkedChildren="Bật" unCheckedChildren="Tắt" defaultValue={false} />
-                            </Form.Item>
-                        </Col>
-                        <Col span={24}>
-                            <Button type="primary" htmlType="submit">Tạo</Button>
+                            <Button type="primary" htmlType="submit" block>Tạo</Button>
                         </Col>
                     </Row>
                 </Form>

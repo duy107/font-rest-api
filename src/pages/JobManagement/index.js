@@ -6,7 +6,7 @@ function JobManagement() {
     return (
         <>
             <h1>Quản lý công việc</h1>
-            <Link to={"/create-job"}><Button icon={<FaPlus/>}>Tạo mới công việc</Button></Link>
+            <Link to={"create"}><Button icon={<FaPlus/>}>Tạo mới công việc</Button></Link>
             <div><ListJob /></div>
         </>
     );

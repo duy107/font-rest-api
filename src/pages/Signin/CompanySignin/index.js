@@ -1,5 +1,4 @@
-import * as company from "../../../services/companyService";
-import * as cookie from "../../../helpers/cookie"
+import { login, loginGet } from "../../../services/admin/company.services";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { checkAuthen } from "../../../actions/checkLogin";
@@ -13,22 +12,25 @@ function CompanySigin() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const [showPass, setShowPass] = useState(false);
+    const isLogin = async () => {
+        const res = await loginGet();
+        if (res.code === 400) {
+            navigate("/admin/overview");
+            return;
+        }
+    }
+    isLogin();
     const handleSubmit = async (e) => {
         e.preventDefault();
         const email = e.target[0].value;
         const password = e.target[1].value;
-        const res = await company.login(email, password);
-        if (res.length > 0) {
-            cookie.setCookie("id", res[0].id, 1);
-            cookie.setCookie("email", res[0].email, 1);
-            cookie.setCookie("password", res[0].password, 1);
-            cookie.setCookie("token", res[0].token, 1);
+        const res = await login({ email, password });
+        if (res.code === 200) {
             dispatch(checkAuthen(true));
-            navigate("/home-admin");
+            navigate("/admin/overview");
         } else {
-            messageApi.error("Tài khoản hoặc mật khẩu không chính xác!");
+            messageApi.error(res.message);
         }
-
     }
     return (
         <>
@@ -40,7 +42,7 @@ function CompanySigin() {
                         <InputGroup.Text>
                             <CiUser />
                         </InputGroup.Text>
-                        <Form.Control type="email" placeholder="Enter email" required/>
+                        <Form.Control type="email" placeholder="Enter email" required />
                     </InputGroup>
                     <Form.Text className="text-muted">
                         We'll never share your email with anyone else.
@@ -52,7 +54,7 @@ function CompanySigin() {
                         <InputGroup.Text>
                             <CiLock />
                         </InputGroup.Text>
-                        <Form.Control type={showPass ? "text" : "password"} placeholder="Password" required/>
+                        <Form.Control type={showPass ? "text" : "password"} placeholder="Password" required />
                         <InputGroup.Text onClick={() => setShowPass(!showPass)}>
                             {showPass ? (<FaEye />) : (< FaEyeSlash />)}
                         </InputGroup.Text>

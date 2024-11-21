@@ -1,6 +1,5 @@
 import LayoutDefault from "../layout/LayoutDefault";
-import Search from "../../pages/Search";
-import JobDetail from "../../pages/JobDetail";
+import JobDetail from "../../views/client/pages/job/detail.job";
 import Company from "../../pages/Company";
 import CompanyDetail from "../../pages/Company/CompanyDetail";
 import Register from "../../pages/Register";
@@ -15,9 +14,17 @@ import CreateJob from "../../pages/CreateJob";
 import CvManagement from "../../pages/CvManagement";
 import HomeUser from "../../pages/Home/HomeUser";
 import HomeAdmin from "../../pages/Home/HomeAdmin";
-import SearchJob from "../../pages/SearchJob";
+import Infor from "../../views/client/pages/user/infor";
+import SearchJob from "../../views/client/pages/search";
 import UserSignin from "../../pages/Signin/UserSignin";
 import CompanySigin from "../../pages/Signin/CompanySignin";
+import AuthAdmin from "../authorization/admin/auth";
+import AuthClient from "../authorization/client/auth";
+import NotFound from "../../views/client/pages/404";
+import Result from "../../views/client/pages/search/result";
+import Forgot from "../../views/client/pages/user/forgot";
+import OTP from "../../views/client/pages/user/otp";
+import Reset from "../../views/client/pages/user/reset";
 
 export const router = [
     {
@@ -33,12 +40,16 @@ export const router = [
                 element: <SearchJob />
             },
             {
-                path: "result",
-                element: <Search />
+                path: "jobs",
+                element: <Result />
             },
             {
-                path: "jobs/:id",
-                element: <JobDetail />
+                path: "jobs/:slug",
+                element: <JobDetail/>
+            },
+            {
+                path: "infor",
+                element: <AuthClient> <Infor /> </AuthClient>
             }
             ,
             {
@@ -54,18 +65,30 @@ export const router = [
                 element: <Register />
             },
             {
-                path: "signin",
+                path: "/",
                 element: <Signin />,
                 children: [
                     {
-                        path: "user_signin",
-                        element: <UserSignin />
+                        path: "login",
+                        element: <UserSignin />,
                     },
                     {
-                        path: "company_signin",
+                        path: "admin/login",
                         element: <CompanySigin />
                     }
                 ]
+            },
+            {
+                path: "forgot",
+                element: <Forgot/>
+            },
+            {
+                path: "forgot/otp",
+                element: <OTP/>
+            },
+            {
+                path: "forgot/reset",
+                element: <Reset/>
             },
             {
                 path: "logout",
@@ -79,7 +102,7 @@ export const router = [
     },
     // private layout
     {
-        element: <PrivateRouter />,
+        element: <AuthAdmin><PrivateRouter /></AuthAdmin>,
         children: [
             {
                 element: <LayoutAdmin />,
@@ -97,7 +120,11 @@ export const router = [
                             },
                             {
                                 path: "job-management",
-                                element: <JobManagement />
+                                element: <JobManagement />,
+                            },
+                            {
+                                path: "job-management/create",
+                                element: <CreateJob />
                             },
                             {
                                 path: "cv-management",
@@ -106,20 +133,15 @@ export const router = [
                         ]
                     },
                     {
-                        path: "create-job",
-                        element: <CreateJob />
-                    },
-                    {
                         path: "detail-job/:id",
                         element: <JobDetail />
                     }
-                    // ,
-                    // {
-                    //     path: "detail-cv:id",
-                    //     element: <CvDetail />
-                    // }
                 ]
             }
         ]
+    },
+    {
+        path: "*",
+        element: <NotFound />
     }
 ]

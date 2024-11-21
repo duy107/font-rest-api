@@ -1,37 +1,37 @@
 import { Button } from "antd";
-import { changeStatusCv, detailCv } from "../../services/cvService";
 import { useState } from "react";
 import { FaRegEye } from "react-icons/fa6";
-import Modal from 'react-bootstrap/Modal';;
+import Modal from 'react-bootstrap/Modal';
+import moment from "moment";
+import { update } from "../../services/admin/cv-management";
 
-function CvDetail({ id, reload }) {
+function CvDetail({ item, reload }) {
     const [show, setShow] = useState(false);
-    const [detailCV, setDetailCV] = useState({});
-    const fetchApi = async () => {
-        const res = await detailCv(id);
-        if (res) {
-            setDetailCV(res);
-        }
-    }
 
-    const handleAccept = async () => {
-        const options = {
-            "accepted": true
+    const handleAccept =  () => {
+        const handleUpdate = async () => {
+            await update({
+                id: item._id,
+                type: "accepted"
+            });
         }
-        const res = await changeStatusCv(id, options);
-        if (res) {
-            setShow(false);
-            reload();
-        }
+        handleUpdate();
+        setShow(false);
+        reload();
     }
     const handleClose = () => {
         setShow(false);
         reload();
     };
     const handleShow = () => {
-        changeStatusCv(id, { statusRead: true });
+        const handleUpdate = async () => {
+            const res = await update({
+                id: item._id,
+                type: "statusRead"
+            });
+        }
+        handleUpdate();
         setShow(true);
-        fetchApi();
     };
     return (
         <>
@@ -42,19 +42,16 @@ function CvDetail({ id, reload }) {
                     <Modal.Title>Thông tin CV</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    {detailCV && (
-                        <div>
-                            <div>Tên ứng viên:  <strong>{detailCV.name}</strong></div>
-                            <div>Điện thoại: <strong>{detailCV.phone}</strong></div>
-                            <div>Email: <strong>{detailCV.email}</strong></div>
-                            <div>Ngày tạo cv: <strong>{detailCV.createAt}</strong></div>
-                            <div>Project: <strong>{detailCV.linkProject}</strong></div>
-                            <div>Mô tả bản thân: <strong>{detailCV.description}</strong></div>
-                        </div>
-                    )}
+                    <div>
+                        <div>Tên ứng viên:  <strong>{item.userInfor.fullName}</strong></div>
+                        <div>Điện thoại: <strong>{item.userInfor.phone}</strong></div>
+                        <div>Email: <strong>{item.userInfor.email}</strong></div>
+                        <div>Ngày tạo cv: <strong>{moment(item.createdAt).format("DD/MM/YYYY HH:mm:ss")}</strong></div>
+                        <div>Project: <strong>{item.project}</strong></div>
+                    </div>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button onClick={handleAccept}>Accept</Button>
+                    {!  item.accepted && <Button onClick={handleAccept}>Accept</Button>}
                     <Button type="primary" onClick={handleClose}>
                         Close
                     </Button>

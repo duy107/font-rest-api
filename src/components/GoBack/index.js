@@ -5,7 +5,7 @@ function GoBack() {
     const navigate = useNavigate();
     return ( 
         <>
-            <Button onClick={() => navigate(-1)}>Quay lại</Button>
+            <Button onClick={() => navigate(-1)} style={{marginBottom: "10px"}} danger>Quay lại</Button>
         </>
     );
 }

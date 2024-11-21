@@ -6,8 +6,8 @@ import { Link, Outlet } from "react-router-dom"
 import MenuSider from "../../MenuSider";
 
 
-import logo from "../../../assets/images/logo.png"
-import logo_fold from "../../../assets/images/logo-fold.png"
+// import logo from "../../../assets/images/logo.png"
+// import logo_fold from "../../../assets/images/logo-fold.png"
 import "./style.scss";
 import { IoIosLogOut } from "react-icons/io";
 
@@ -20,7 +20,7 @@ function LayoutAdmin() {
             <Layout>
                 <header className="header__admin">
                     <div className={"header__admin__logo " + (collapsed && "header__admin__logo--collapsed")}>
-                        <img src={!collapsed ? logo : logo_fold} alt="logo" />
+                        <img src={!collapsed ? "http://res.cloudinary.com/dxx1lgamz/image/upload/v1732164826/lydd0molalmluj0xfy02.jpg" : "http://res.cloudinary.com/dxx1lgamz/image/upload/v1732164826/lydd0molalmluj0xfy02.jpg"} alt="logo" />
                     </div>
                     <div className="header__admin__navs">
                         <div className="header__admin__navs__left">
