@@ -25,7 +25,10 @@ import Result from "../../views/client/pages/search/result";
 import Forgot from "../../views/client/pages/user/forgot";
 import OTP from "../../views/client/pages/user/otp";
 import Reset from "../../views/client/pages/user/reset";
-
+import Role from "../../views/admin/pages/role";
+import Permission from "../../views/admin/pages/permission";
+import Account from "../../views/admin/pages/account";
+import CreateAccount from "../../views/admin/pages/account/create";
 export const router = [
     {
         path: "/",
@@ -50,16 +53,7 @@ export const router = [
             {
                 path: "infor",
                 element: <AuthClient> <Infor /> </AuthClient>
-            }
-            ,
-            // {
-            //     path: "company",
-            //     element: <Company />
-            // },
-            // {
-            //     path: "company/:id",
-            //     element: <CompanyDetail />
-            // },
+            },
             {
                 path: "register",
                 element: <Register />
@@ -129,6 +123,22 @@ export const router = [
                             {
                                 path: "cv-management",
                                 element: <CvManagement />
+                            },
+                            {
+                                path: "role",
+                                element: <Role />
+                            },
+                            {
+                                path: "permission",
+                                element: <Permission />
+                            },
+                            {
+                                path: "account-management",
+                                element: <Account />
+                            },
+                            {
+                                path: "account-management/create",
+                                element: <CreateAccount />
                             }
                         ]
                     },

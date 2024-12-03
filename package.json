@@ -2,6 +2,7 @@
   "name": "recruitment",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://demo-rest-api.up.railway.app/",
   "dependencies": {
     "@ant-design/charts": "^2.2.1",
     "@ant-design/icons": "^5.5.1",

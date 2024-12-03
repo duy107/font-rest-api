@@ -7,25 +7,20 @@ import { Button, Form, InputGroup } from 'react-bootstrap';
 import { CiUser, CiLock } from "react-icons/ci";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useState } from "react";
+import { permission } from "../../../actions/permission.action";
 function CompanySigin() {
     const [messageApi, contextHolder] = message.useMessage();
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const [showPass, setShowPass] = useState(false);
-    const isLogin = async () => {
-        const res = await loginGet();
-        if (res.code === 400) {
-            navigate("/admin/overview");
-            return;
-        }
-    }
-    isLogin();
     const handleSubmit = async (e) => {
         e.preventDefault();
         const email = e.target[0].value;
         const password = e.target[1].value;
         const res = await login({ email, password });
         if (res.code === 200) {
+            localStorage.setItem("permission", JSON.stringify(res.permissions));
+            dispatch(permission(res.permissions));
             dispatch(checkAuthen(true));
             navigate("/admin/overview");
         } else {

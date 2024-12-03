@@ -5,6 +5,8 @@ import { useDispatch } from "react-redux";
 import { FaLock, FaUser } from "react-icons/fa";
 import ForgetPassword from "../../ForgetPassword";
 import { checkAuthen } from "../../../actions/checkLogin";
+import { infor  } from "../../../actions/inforUser";
+import { getCookie } from "../../../helpers/cookie";
 function SiginUser() {
     const [messageApi, contextHolder] = message.useMessage();
     const navigate = useNavigate();
@@ -37,7 +39,9 @@ function SiginUser() {
         });
         if (res.code === 200) {
             localStorage.setItem("infor", JSON.stringify(res.infor));
+            dispatch(infor(res.infor));
             dispatch(checkAuthen(true));
+            console.log(getCookie("tokenUser"));
             navigate("/");
         } else {
             messageApi.error(res.message);

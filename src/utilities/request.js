@@ -1,7 +1,8 @@
-const api = "https://rest-api-node.up.railway.app/";
-// const api = "http://localhost:4000/";
+// const api = "https://back-rest-api.up.railway.app/";
+// const api = "https://demo-rest-api.up.railway.app/";
+const api = "http://localhost:4000/";
 export const get = async (path) => {
-    const res = await fetch(`${api}${path}`, { credentials: "include" });
+    const res = await fetch(`${api}${path}`, { credentials: "include"});
     const data = await res.json();
     return data;
 }

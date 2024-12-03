@@ -4,10 +4,11 @@ import { useState, useEffect } from "react";
 import DeleteCV from "./DeleteCV";
 import CvDetail from "./detail";
 import { listCV } from "../../../../services/admin/cv-management";
+import { useSelector } from "react-redux";
 function ListCV() {
     const [api, contextHolder] = notification.useNotification();
     const [listCVs, setListCVs] = useState([]);
-
+    const permission = useSelector(state => state.permission);
     const fetchApi = async () => {
         const res = await listCV();
         setListCVs(res);
@@ -20,7 +21,7 @@ function ListCV() {
         fetchApi();
     }
     const displayNotification = (data) => {
-        const {type, infor} = data;
+        const { type, infor } = data;
         api[type](infor);
     }
     const columns = [
@@ -78,10 +79,14 @@ function ListCV() {
             render: (_, record) => {
                 return (
                     <>
-                        <div style={{ marginBottom: 10 }}>
-                            <CvDetail item={record} reload={handleReload} />
-                        </div>
-                        <DeleteCV item={record} reload={handleReload} displayNotification={displayNotification} />
+                        {permission.includes("cv_view") &&
+                            <div style={{ marginBottom: 10 }}>
+                                <CvDetail item={record} reload={handleReload} />
+                            </div>
+                        }
+                        {permission.includes("cv_delete") &&
+                            <DeleteCV item={record} reload={handleReload} displayNotification={displayNotification} />
+                        }
                     </>
                 )
             }
@@ -89,7 +94,7 @@ function ListCV() {
     ];
     return (
         <>
-             {contextHolder}
+            {contextHolder}
             <Table columns={columns} dataSource={listCVs} rowKey={"id"} />
         </>
     );

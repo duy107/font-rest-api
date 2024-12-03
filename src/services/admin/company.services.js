@@ -17,3 +17,13 @@ export const update = async (data) => {
     const res = await patch("admin/update", data);
     return res;
 }
+
+export const account = async () => {
+    const res = await get("admin/account-management");
+    return res;
+}
+
+export const accountCreate = async (data) => {
+    const res = await post("admin/account-management/create", data);
+    return res;
+}

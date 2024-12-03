@@ -4,10 +4,11 @@ import { FaRegEye } from "react-icons/fa6";
 import Modal from 'react-bootstrap/Modal';
 import moment from "moment";
 import { update } from "../../../../services/admin/cv-management";
+import { useSelector } from "react-redux";
 
 function CvDetail({ item, reload }) {
     const [show, setShow] = useState(false);
-
+    const permission = useSelector(state => state.permission);
     const handleAccept =  () => {
         const handleUpdate = async () => {
             await update({
@@ -51,7 +52,7 @@ function CvDetail({ item, reload }) {
                     </div>
                 </Modal.Body>
                 <Modal.Footer>
-                    {!  item.accepted && <Button onClick={handleAccept}>Accept</Button>}
+                    {!  item.accepted && permission.includes("cv_accpet") && <Button onClick={handleAccept}>Accept</Button>}
                     <Button type="primary" onClick={handleClose}>
                         Close
                     </Button>

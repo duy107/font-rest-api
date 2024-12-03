@@ -1,21 +1,22 @@
 import { useEffect, useState } from "react";
 import moment from "moment";
-import { listJob as getListJob} from "../../../../services/admin/job-management.services";
-import {Table, Tag, notification} from "antd";
+import { listJob as getListJob } from "../../../../services/admin/job-management.services";
+import { Table, Tag, notification } from "antd";
 import EditJob from "./EditJob";
 import DeleteJob from "./DeleteJob";
 import DetailJob from "./DetailJob";
+import { useSelector } from "react-redux";
 
 function ListJob() {
     const [api, contextHolder] = notification.useNotification();
     const [listJob, setListJob] = useState([]);
-    
+    const permission = useSelector(state => state.permission);
     const fetchApi = async () => {
         const data = await getListJob();
         setListJob(data || []);
     }
     const displayNotification = (data) => {
-        const {type, infor} = data;
+        const { type, infor } = data;
         api[type](infor);
     }
     useEffect(() => {
@@ -36,7 +37,7 @@ function ListJob() {
             key: 'tags',
             render: (_, record) =>
                 (record.tags || []).map((item, index) => (
-                    <Tag key={index} color="blue" style={{marginBottom: 10}}>{item.name}</Tag>
+                    <Tag key={index} color="blue" style={{ marginBottom: 10 }}>{item.name}</Tag>
                 ))
         },
         {
@@ -70,9 +71,16 @@ function ListJob() {
             render: (_, record) => {
                 return (
                     <>
-                        <div><DetailJob item={record} reload={handleReload}/></div>
-                        <div style={{margin: "10px 0px"}}><EditJob item={record} reload={handleReload} displayNotification={displayNotification}/></div>
-                        <div> <DeleteJob item={record} reload={handleReload} displayNotification={displayNotification}/></div>
+                        {permission.includes("job_view") &&
+                            <div><DetailJob item={record} reload={handleReload} /></div>
+                        }
+                        {permission.includes("job_edit") &&
+                            <div style={{ margin: "10px 0px" }}><EditJob item={record} reload={handleReload} displayNotification={displayNotification} /></div>
+                        }
+                        {permission.includes("job_delete") &&
+                            <div> <DeleteJob item={record} reload={handleReload} displayNotification={displayNotification} /></div>
+                        }
+
                     </>
                 )
             }

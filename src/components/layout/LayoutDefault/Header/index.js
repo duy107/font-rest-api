@@ -32,7 +32,6 @@ function Header() {
             fetchApi();
         }
     }, []);
-    console.log(token, state, check);
     return (
         <>
             <header className="header">
