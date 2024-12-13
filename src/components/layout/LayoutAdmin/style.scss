@@ -2,7 +2,7 @@
     display: flex;
     border-bottom: 1px solid #ddd;
     background-color: #fff;
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     width: 100%;
@@ -46,7 +46,7 @@
 }
 .sider{
     background: #fff;
-    margin-top: 65px;
+    // margin-top: 65px;
 }
 .content{
     padding: 20px;

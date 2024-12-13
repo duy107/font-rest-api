@@ -8,3 +8,8 @@ export const job_detail = async (param) => {
     const res = await get(`jobs/${param}`);
     return res;
 }
+
+export const lists = async () => {
+    const res = await get("list");
+    return res;
+}

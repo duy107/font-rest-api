@@ -1,53 +1,40 @@
-import "./style.scss";
-import { Col, Container, Row } from "react-bootstrap";
-import { CiFacebook } from "react-icons/ci";
-import { FaGithub, FaYoutube  } from "react-icons/fa";
-import "./style.scss";
+import { FaFacebookSquare, FaLinkedin, FaYoutube } from "react-icons/fa";
+import { MdOutlineEmail } from "react-icons/md";
+import { FiPhoneCall } from "react-icons/fi";
 function Footer() {
     return (
         <>
-            <footer className="footer">
-                <Container>
-                    <Row className="p-3">
-                        <Col className="text-center mb-4" xl={4} lg={4} md={6} sm={12}>
-                            <div className="infor__company">
-                                <div className="infor__company__logo">
-                                    <img src="http://res.cloudinary.com/dxx1lgamz/image/upload/v1732164826/lydd0molalmluj0xfy02.jpg" alt="logojj"/>
-                                </div>
-                                <div className="infor__company__title">Công ty ABC</div>
-                                <div className="infor__company__address">Dương luong</div>
-                                <div className="infor__company__contact">Liên hệ: contact@abc.com</div>
+            <footer className="bg-gray-300 mt-7">
+                <div className="container mx-auto">
+                    <div className="flex gap-2 max-w-[80%] mx-auto py-[30px] px-[10px]">
+                        <div className="w-1/3">
+                            <img />
+                            <div>Đại học Công Nghiệp Hà Nội</div>
+                        </div>
+                        <div className="w-1/3 flex flex-col items-center">
+                            <h2 className="text-[20px] font-medium">Về chúng tôi</h2>
+                            <div>Liên hệ</div>
+                            <div>Cơ hội việc làm</div>
+                            <div>Quy định bảo mật</div>
+                            <div>Thỏa thuận sử dụng</div>
+                        </div >
+                        <div class="w-1/3 flex flex-col items-center">
+                            <h2 className="text-[20px] font-medium">Theo dõi chúng tôi tại</h2>
+                            <div class="flex gap-2 text-[40px]">
+                                <FaYoutube />
+                                <FaLinkedin />
+                                <FaFacebookSquare />
                             </div>
-                        </Col>
-                        <Col className="text-center mb-4" xl={4} lg={4} md={6} sm={12}>
-                            <div className="about">
-                                <div className="title">
-                                    Về ABC
-                                </div>
-                                <div>
-                                    <a href="#">Về chúng tôi</a>
-                                </div>
-                            </div>
-                        </Col>
-                        <Col className="text-center mb-4" xl={4} lg={4} md={12} sm={12}>
-                            <div className="following">
-                                <div className="title">
-                                   Theo dõi chúng tôi
-                                </div>
-                                <div className="following__types">
-                                    <div className="following__item"><CiFacebook /> </div> 
-                                    <div className="following__item"><FaGithub /></div>
-                                    <div className="following__item"><FaYoutube /></div>
-                                </div>
-                            </div>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col className="text-center">
-                            <p>@2024 Công ty TNHH ABC. All rights reserved.</p>
-                        </Col>
-                    </Row>
-                </Container>
+                        </div>
+                    </div>
+                    <div className="flex justify-between items-center border-t border-gray-200 p-8 mt-8">
+                        <span>@2024 Công ty TNHH ABC. All rights reserved.</span>
+                        <div className="flex gap-4">
+                            <span><MdOutlineEmail className="inline-block" /> contact@abc.com</span>
+                            <span><FiPhoneCall className="inline-block" /> +12 345 6789</span>
+                        </div>
+                    </div>
+                </div>
             </footer>
         </>
     );

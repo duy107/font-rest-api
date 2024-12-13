@@ -1,4 +1,4 @@
-import { get, patch, post } from "../../utilities/request"
+import { del, get, patch, post } from "../../utilities/request"
 export const login = async (data) => {
     const res = await post("admin/login", data);
     return res;
@@ -25,5 +25,14 @@ export const account = async () => {
 
 export const accountCreate = async (data) => {
     const res = await post("admin/account-management/create", data);
+    return res;
+}
+
+export const accountUpdate = async (data) => {
+
+}
+
+export const accountDelete = async (id) => {
+    const res = await del(`admin/account-management/delete`, id);
     return res;
 }

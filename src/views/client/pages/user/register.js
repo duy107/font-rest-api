@@ -1,4 +1,4 @@
-import { Button, Card, Checkbox, Col, Form, Input, message, Row, Upload } from "antd";
+import { Button, Card, Checkbox, Col, Form, Input, message, Row } from "antd";
 import { FileUploadWithPreview } from 'file-upload-with-preview';
 import 'file-upload-with-preview/dist/style.css';
 import { useEffect, useRef, useState } from "react";
@@ -18,13 +18,13 @@ function Register() {
         // delete e.avatar;
         const formData = new FormData();
         formData.append("avatar", fileUpload.current.cachedFileArray[0]);
-        for(const key in e) {
+        for (const key in e) {
             formData.append(key, e[key])
         }
-        const res = await register(formData); 
-        if(res.code === 200){
+        const res = await register(formData);
+        if (res.code === 200) {
             navigate("/login");
-        }else{
+        } else {
             messageApi.error(res.message);
         }
     }
@@ -38,34 +38,34 @@ function Register() {
                             <Row gutter={[10, 10]}>
                                 <Col span={12}>
                                     <Form.Item label="Họ tên" name="fullName"  >
-                                        <Input />
+                                        <Input required/>
                                     </Form.Item>
                                 </Col>
                                 <Col span={12}>
                                     <Form.Item label="Phone Number" name="phone"  >
-                                        <Input />
+                                        <Input required/>
                                     </Form.Item>
                                 </Col>
                                 <Col span={12}>
                                     <Form.Item label="Email" name="email"  >
-                                        <Input type="email" />
+                                        <Input type="email" required/>
                                     </Form.Item>
                                 </Col>
                                 <Col span={12}>
                                     <Form.Item label="Password" name="password"  >
-                                        <Input.Password  />
+                                        <Input.Password required/>
                                     </Form.Item>
                                 </Col>
                                 <Col span={12}>
                                     <Form.Item
                                         name="avatar"
-                                        label="Avatar" >
+                                    >
                                         <div className="custom-file-container" data-upload-id="my-avatar" ref={fileUpload} required></div>
                                     </Form.Item>
                                 </Col>
                                 <Col span={12}>
                                     <Form.Item label="Địa chỉ" name="address">
-                                        <Input.TextArea rows={11} />
+                                        <Input.TextArea rows={11} required/>
                                     </Form.Item>
                                 </Col>
                                 <Col span={24}>

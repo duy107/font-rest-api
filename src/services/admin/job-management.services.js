@@ -4,6 +4,10 @@ export const listJob = async () => {
     const res = await get("admin/job-management");
     return res;
 }
+export const lists = async () => {
+    const res = await get("admin/job-management/list");
+    return res;
+}
 export const update = async (data) => {
     const res = await patch("admin/job-management/update", data);
     return res;

@@ -2,7 +2,6 @@ import { Outlet, useNavigate } from "react-router-dom";
 import { Tabs, Tab } from "react-bootstrap";
 import "./style.scss";
 import { loginGet } from "../../services/admin/company.services";
-import { useSelector } from "react-redux";
 
 function Signin() {
     const isLogin = async () => {
