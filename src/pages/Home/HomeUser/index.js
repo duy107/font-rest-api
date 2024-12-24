@@ -74,7 +74,7 @@ function HomeUser() {
                 message: "Chúc Mừng",
                 description: message(),
                 placement: 'top',
-                duration: 4
+                duration: 2
             })
         )
     }, [listCV]);

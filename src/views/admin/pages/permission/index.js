@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import { roles } from "../../../../services/admin/role.services";
 import * as Per  from "../../../../components/Permission";
 import {handleUpdate, handleChecked} from "../../../../helpers/permission";
+import { message } from "antd";
 function Permission() {
     const [role, setRole] = useState([]);
+    const [messageApi, contextHolder] = message.useMessage();
     const [value, setValue] = useState([["job_view", "job_add", "job_edit", "job_delete"],
                                         ["cv_view", "cv_accpet", "cv_delete"],
                                         ["role_view", "role_add", "role_edit", "role_delete", "role_permission"],
@@ -25,11 +27,20 @@ function Permission() {
             handleChecked();
         }
     }, [role]);
+    const handleSumbit = async () => {
+        const res = await handleUpdate();
+        if(res.code === 200){
+            messageApi.success(res.message);
+        }else{
+            messageApi.error(res.message);
+        }
+    }
     return (
         <>
+            {contextHolder}
             {role.length > 0 &&
                 <>
-                    <button className="btn btn-sm btn-primary mb-2" onClick={handleUpdate}>Cập nhật</button>
+                    <button className="btn btn-sm btn-primary mb-2" onClick={handleSumbit}>Cập nhật</button>
                     <div data-records={JSON.stringify(role)}></div>
                     <table className="table table-hover table-sm" table-permission="">
                         <thead>

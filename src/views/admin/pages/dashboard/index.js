@@ -4,10 +4,18 @@ import JobStatistic from "./JobStatistic";
 import CvStatistic from "./CvStatistic";
 import InforCompany from "./InforCompany";
 import { useState, useEffect } from "react";
+import * as cookie from "../../../../helpers/cookie";
+import { jwtDecode } from "jwt-decode";
 import { overview } from "../../../../services/admin/overview.services";
 function DashBoard() {
     const [statistic, setStatistic] = useState(null);
     useEffect(() => {
+        try {
+            console.log(cookie.getCookie("permission"));
+            console.log(jwtDecode(cookie.getCookie("permission")));
+        } catch (error) {
+            console.log(new Error(error).message);
+        }
         const fetchApi = async () => {
             const statistics = await overview();
             if (statistics) {

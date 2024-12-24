@@ -26,6 +26,7 @@ export const handleUpdate = async () => {
         })
         if(permission.length > 0){
             const res = await changePermission({data: permission});
+            return res;
         }
     }
 }

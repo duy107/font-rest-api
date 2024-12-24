@@ -24,12 +24,13 @@ function UpdateAccount({ item, reload }) {
         form.resetFields();
     };
     const handleSubmit = async (e) => {
+        e.id = item._id;
         const res = await update(e);
+        
         if(res.code === 200){
             setIsModalOpen(false);
             reload();
         } 
-
     }
     const options = role.map(item => ({
         value: item._id,

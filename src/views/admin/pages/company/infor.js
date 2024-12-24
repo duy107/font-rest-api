@@ -33,7 +33,6 @@ function InforCompany() {
         setIsEdit(true);
     }
     const handleSubmit = async (e) => {
-        console.log(e)
         const res = await update(e);
         if (res.code === 200) {
             setInfor(e);

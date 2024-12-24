@@ -4,7 +4,7 @@ import "./style.scss";
 function Main() {
     return (  
         <>
-            <main className="main">
+            <main className="main flex-1">
                 {/* <div className="contaier">
                     <Outlet />
                 </div> */}

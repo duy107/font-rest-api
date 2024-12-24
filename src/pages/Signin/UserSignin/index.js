@@ -41,7 +41,6 @@ function SiginUser() {
             localStorage.setItem("infor", JSON.stringify(res.infor));
             dispatch(infor(res.infor));
             dispatch(checkAuthen(true));
-            console.log(getCookie("tokenUser"));
             navigate("/");
         } else {
             messageApi.error(res.message);

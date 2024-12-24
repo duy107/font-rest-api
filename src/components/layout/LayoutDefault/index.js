@@ -5,7 +5,7 @@ import Header from "./Header";
 function LayoutDefault() {
     return (
         <>
-            <div className="layout__default">
+            <div className="layout__default flex flex-col min-h-[100vh]">
                 <Header/>
                 <Main />
                 <Footer />

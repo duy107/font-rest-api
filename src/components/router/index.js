@@ -1,7 +1,5 @@
 import LayoutDefault from "../layout/LayoutDefault";
 import JobDetail from "../../views/client/pages/job/detail.job";
-// import Company from "../../pages/Company";
-// import CompanyDetail from "../../pages/Company/CompanyDetail";
 import Register from "../../views/client/pages/user/register";
 import Signin from "../../pages/Signin";
 import Logout from "../../pages/Logout";
