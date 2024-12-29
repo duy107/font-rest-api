@@ -14,7 +14,7 @@ function SiginUser() {
     const rules = [
         {
             required: true,
-            message: "Please enter this field!"
+            message: "Không để trống trường này"
         }
     ]
 

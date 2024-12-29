@@ -44,50 +44,64 @@ function CreateJob() {
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
-        e.salary = `${e.salary}$`;
         const res = await create(e);
-        if(res.code === 200){
+        if (res.code === 200) {
             form.resetFields();
             messageApi.success(res.message);
-        }else{
+        } else {
             messageApi.error(res.message);
         }
     }
     return (
         <>
             {contextHolder}
-            <GoBack/>
-            <Card title="Tạo job mới">
-                <Form layout="vertical" onFinish={handleSubmit}>
+            <GoBack />
+            <Card title="Tạo công việc mới">
+                <Form layout="vertical" onFinish={handleSubmit} form={form}>
                     <Row gutter={[20, 20]}>
                         <Col span={16}>
-                            <Form.Item label="Tên job" name="name">
+                            <Form.Item label="Tên công việc" name="name" rules={[{ required: true, message: 'Không để trống trường này!' }]}>
                                 <Input></Input>
                             </Form.Item>
                         </Col>
                         <Col span={4} >
-                            <Form.Item label="Lương" name="salary">
-                                <Input addonAfter="$"></Input>
+                            <Form.Item label="Lương" name="salary" rules={[{ required: true, message: 'Không để trống trường này!' }]}>
+                                <Input ></Input>
                             </Form.Item>
                         </Col>
                         <Col span={4}>
                             <Form.Item label="Trạng thái" name="status" valuePropName="checked">
-                            <Switch checkedChildren="Bật" unCheckedChildren="Tắt" defaultValue={true} />
+                                <Switch checkedChildren="Đang tuyển dụng" unCheckedChildren="Ngừng tuyển dụng" defaultValue={true} />
                             </Form.Item>
                         </Col>
                         <Col span={12} >
-                            <Form.Item label="Tags" name="tags">
+                            <Form.Item label="Ngôn ngữ" name="tags" rules={[{ required: true, message: 'Không để trống trường này!' }]}>
                                 <Select mode="multiple" options={tags} />
                             </Form.Item>
                         </Col>
                         <Col span={12}>
-                            <Form.Item label="Thành phố" name="cities">
+                            <Form.Item label="Thành phố" name="cities"  rules={[{ required: true, message: 'Không để trống trường này!' }]}>
                                 <Select mode="multiple" options={city} />
                             </Form.Item>
                         </Col>
                         <Col span={24} >
-                            <Form.Item label="Mô tả" name="description">
-                                <Tinymce isEdit={true}/>
+                            <Form.Item label="Yêu cầu kinh nghiệm" name="experience" rules={[{ required: true, message: 'Không để trống trường này!' }]}>
+                                <Tinymce isEdit={true} />
+                            </Form.Item>
+                        </Col>
+                        <Col span={24} >
+                            <Form.Item label="Yêu cầu trình độ" name="level" rules={[{ required: true, message: 'Không để trống trường này!' }]}>
+                                <Tinymce isEdit={true} />
+                            </Form.Item>
+                        </Col>
+                        <Col span={24} >
+                            <Form.Item label="Mô tả" name="description" rules={[{ required: true, message: 'Không để trống trường này!' }]}>
+                                <Tinymce isEdit={true} />
+                            </Form.Item>
+                        </Col>
+                        <Col span={24} >
+                            <Form.Item label="Quyền lợi" name="benefit" rules={[{ required: true, message: 'Không để trống trường này!' }]}>
+                                <Tinymce isEdit={true} />
                             </Form.Item>
                         </Col>
                         <Col span={24}>

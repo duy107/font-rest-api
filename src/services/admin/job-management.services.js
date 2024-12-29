@@ -22,3 +22,7 @@ export const create = async(data) => {
     const res = await post("admin/job-management/create", data);
     return res;
 }
+export const detail = async (id) => {
+    const res = await get(`admin/job-management/detail/${id}`);
+    return res;
+}

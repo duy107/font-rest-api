@@ -45,7 +45,7 @@ function DetailJob({ item, reload }) {
                                     </Form.Item>
                                 </Col>
                                 <Col span={12} >
-                                    <Form.Item label="Tags" name="tags">
+                                    <Form.Item label="Ngôn ngữ" name="tags">
                                         <Select mode="multiple" />
                                     </Form.Item>
                                 </Col>
@@ -56,12 +56,40 @@ function DetailJob({ item, reload }) {
                                 </Col>
                                 <Col span={12}>
                                     <Form.Item label="Trạng thái" name="status" valuePropName="checked">
-                                        {item.status ? (<Tag color="green">Đang bật</Tag>) : (<Tag color="red">Đang tắt</Tag>)}
+                                        {item.status ? (<Tag color="green">Đang tuyển dụng</Tag>) : (<Tag color="red">Ngừng tuyển dụng</Tag>)}
                                     </Form.Item>
                                 </Col>
                                 <Col span={12}>
                                     <Form.Item label="Thời gian tạo job" name="createAt">
                                         <Input></Input>
+                                    </Form.Item>
+                                </Col>
+                                <Col span={24}>
+                                    <Form.Item label="Yêu cầu kinh nghiệm" >
+                                        <div 
+                                        dangerouslySetInnerHTML={{ __html: item.experience }}
+                                        style={{
+                                            minHeight: "30px",
+                                            padding: "8px 12px",
+                                            border: "1px solid #ddd",
+                                            borderRadius: "10px"
+                                        }}
+                                        >
+                                        </div>
+                                    </Form.Item>
+                                </Col>
+                                <Col span={24}>
+                                    <Form.Item label="Yêu cầu trình độ" >
+                                        <div 
+                                        dangerouslySetInnerHTML={{ __html: item.level }}
+                                        style={{
+                                            minHeight: "30px",
+                                            padding: "8px 12px",
+                                            border: "1px solid #ddd",
+                                            borderRadius: "10px"
+                                        }}
+                                        >
+                                        </div>
                                     </Form.Item>
                                 </Col>
                                 <Col span={24}>
@@ -75,7 +103,20 @@ function DetailJob({ item, reload }) {
                                             borderRadius: "10px"
                                         }}
                                         >
-
+                                        </div>
+                                    </Form.Item>
+                                </Col>
+                                <Col span={24}>
+                                    <Form.Item label="Quyền lợi" >
+                                        <div 
+                                        dangerouslySetInnerHTML={{ __html: item.benefit }}
+                                        style={{
+                                            minHeight: "100px",
+                                            padding: "8px 12px",
+                                            border: "1px solid #ddd",
+                                            borderRadius: "10px"
+                                        }}
+                                        >
                                         </div>
                                     </Form.Item>
                                 </Col>

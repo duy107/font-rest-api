@@ -13,7 +13,7 @@ import 'swiper/css/navigation';
 import { useSelector } from "react-redux";
 import * as cookie from "../../../helpers/cookie";
 import { auth } from "../../../services/client/auth.services";
-import { cvByIdUser } from "../../../services/client/cv.services";
+// import { cvByIdUser } from "../../../services/client/cv.services";
 import { GrGroup } from "react-icons/gr";
 import { FiBarChart, FiCheckCircle } from "react-icons/fi";
 import { GoZap } from "react-icons/go";
@@ -21,9 +21,9 @@ import { GoZap } from "react-icons/go";
 // init Swiper:
 function HomeUser() {
     const state = useSelector(state => state.checkLogin);
-    const infor = useSelector(state => state.infor);
-    const [listCV, setListCV] = useState([]);
-    const [api, contextHolder] = notification.useNotification();
+    // const infor = useSelector(state => state.infor);
+    // const [listCV, setListCV] = useState([]);
+    // const [api, contextHolder] = notification.useNotification();
     const token = cookie.getCookie("tokenUser");
     const [check, setCheck] = useState(true);
     useEffect(() => {
@@ -47,40 +47,40 @@ function HomeUser() {
         };
         fetchApi();
     }, []);
-    useEffect(() => {
-        const fetchApi = async () => {
-            const res = await cvByIdUser(infor._id);
-            if (res.code === 200) {
-                setListCV(res.data);
-            }
-        }
-        state && token && check && fetchApi();
-    }, []);
-    const message = () => {
-        return (
-            <div>
-                {listCV.map((item, index) =>
-                (<div key={index}>
-                    <strong> {item.companyInfor.name} </strong>đã chấp nhận CV của bạn vào vị trí <strong>{item.jobInfor.name}</strong>
-                </div>)
+    // useEffect(() => {
+    //     const fetchApi = async () => {
+    //         const res = await cvByIdUser(infor._id);
+    //         if (res.code === 200) {
+    //             setListCV(res.data);
+    //         }
+    //     }
+    //     state && token && check && fetchApi();
+    // }, []);
+    // const message = () => {
+    //     return (
+    //         <div>
+    //             {listCV.map((item, index) =>
+    //             (<div key={index}>
+    //                 <strong> {item.companyInfor?.name} </strong>đã chấp nhận CV của bạn vào vị trí <strong>{item.jobInfor?.name}</strong>
+    //             </div>)
 
-                )}
-            </div>
-        );
-    }
-    useEffect(() => {
-        listCV.length > 0 && (
-            api.success({
-                message: "Chúc Mừng",
-                description: message(),
-                placement: 'top',
-                duration: 2
-            })
-        )
-    }, [listCV]);
+    //             )}
+    //         </div>
+    //     );
+    // }
+    // useEffect(() => {
+    //     listCV.length > 0 && (
+    //         api.success({
+    //             message: "Chúc Mừng",
+    //             description: message(),
+    //             placement: 'top',
+    //             duration: 2
+    //         })
+    //     )
+    // }, [listCV]);
     return (
         <>
-            {contextHolder}
+            {/* {contextHolder} */}
             {(state && token && check) && <Link to={"/search-job"}><Button type="primary">Tìm kiếm job</Button></Link>}
             <div className="grid grid-cols-1 gap-y-[50px] mt-2">
                 <div className="w-full col-span-1 relative">

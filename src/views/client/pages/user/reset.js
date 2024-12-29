@@ -32,12 +32,12 @@ function Reset() {
         <>
             {contextHolder}
             <Form onSubmit={handleSubmit}>
-                <FloatingLabel controlId="floatingNewPassword" label="New password" className='mb-3'>
-                    <Form.Control type="password" placeholder='New password' required/>
+                <FloatingLabel controlId="floatingNewPassword" label="Mật khẩu mới" className='mb-3'>
+                    <Form.Control type="password" placeholder='Nhập mật khẩu mới' required/>
                 </FloatingLabel>
 
-                <FloatingLabel controlId="floatingConfirmNewPassword" label="Confirm password" className='mb-3'>
-                    <Form.Control type="password" placeholder='Confirm password' required/>
+                <FloatingLabel controlId="floatingConfirmNewPassword" label="Xác nhận mật khẩu" className='mb-3'>
+                    <Form.Control type="password" placeholder='Nhập lại mật khẩu để xác nhận' required/>
                 </FloatingLabel>
 
                 <Button variant="primary" type="submit" className="w-100">

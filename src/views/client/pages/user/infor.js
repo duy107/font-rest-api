@@ -104,25 +104,25 @@ function Infor() {
                         </Col>
                         <Col span="12">
                             <Form.Group className="mb-3" >
-                                <Form.Label>Full name</Form.Label>
+                                <Form.Label>Họ và tên</Form.Label>
                                 <Form.Control type="text" name="fullName" value={inforUpdate.fullName} disabled={!isUpdate} onChange={handleChange} />
                             </Form.Group>
                         </Col>
                         <Col span={12}>
                             <Form.Group className="mb-3" >
-                                <Form.Label>Phone</Form.Label>
+                                <Form.Label>Số điện thoạithoại</Form.Label>
                                 <Form.Control type="text" name="phone" value={inforUpdate.phone} disabled={!isUpdate} onChange={handleChange} />
                             </Form.Group>
                         </Col>
                         <Col span={12}>
                             <Form.Group className="mb-3">
-                                <Form.Label>Address</Form.Label>
+                                <Form.Label>Địa chỉ</Form.Label>
                                 <Form.Control rows={3} name="address" value={inforUpdate.address} disabled={!isUpdate} onChange={handleChange} />
                             </Form.Group>
                         </Col>
                         <Col span={12}>
                             <Form.Group className="mb-3">
-                                <Form.Label>Avatar</Form.Label>
+                                <Form.Label>Ảnh đại diện</Form.Label>
                                 <Form.Control type="file" name="avatar" accept="image/*" data-upload-image-input disabled={!isUpdate} />
                                 <div className="preview-image">
                                     <img data-upload-image-preview src={inforUpdate.avatar} />
@@ -132,14 +132,14 @@ function Infor() {
                         </Col>
                         {isUpdate && <Col span={12}>
                             <Form.Group className="mb-3">
-                                <Form.Label>Password</Form.Label>
+                                <Form.Label>Mật khẩu</Form.Label>
                                 <Form.Control rows={3} name="password" type="password" placeholder="Không nhập nếu không muốn thay đổi" disabled={!isUpdate} onChange={handleChange} />
                             </Form.Group>
                         </Col>}
                         <Col span={24}>
                             <Form.Group className="mb-3">
                                 <Button variant="primary" size="sm" type="submit" className="w-100" disabled={!isUpdate}>
-                                    Cập nhật
+                                    Cập nhật thông tin
                                 </Button>
                             </Form.Group>
                         </Col>

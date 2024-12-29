@@ -42,7 +42,7 @@ function Role() {
       )
     },
     {
-      title: 'Action',
+      title: 'Hành động',
       key: 'action',
       render: (_, record) => {
         return (

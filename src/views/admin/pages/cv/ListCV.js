@@ -1,11 +1,14 @@
 import moment from "moment";
-import { Button, notification, Table, Tag } from "antd";
+import { Button, Modal, notification, Table, Tag } from "antd";
 import { useState, useEffect } from "react";
 import DeleteCV from "./DeleteCV";
 import CvDetail from "./detail";
 import { listCV } from "../../../../services/admin/cv-management";
 import { useSelector } from "react-redux";
+import { detail } from "../../../../services/admin/job-management.services";
 function ListCV() {
+    const [accept, setAccept] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const [api, contextHolder] = notification.useNotification();
     const [listCVs, setListCVs] = useState([]);
     const permission = useSelector(state => state.permission);
@@ -24,13 +27,31 @@ function ListCV() {
         const { type, infor } = data;
         api[type](infor);
     }
+
+    const showModal = () => {
+        setIsModalOpen(true);
+    };
+    const handleCancel = () => {
+        setIsModalOpen(false);
+    };
+
+    const handleClick = (id) => {
+        const fetchApi = async () => {
+            const res = await detail(id);
+            if (res.code === 200) {
+                setAccept(res);
+                showModal();
+            }
+        }
+        fetchApi();
+    }
     const columns = [
         {
-            title: 'Tên jobs',
+            title: 'Tên công việc',
             dataIndex: "idJob",
             key: 'idJob',
             render: (_, record) => (
-                <span>{record.jobInfor.name}</span>
+                <span className="cursor-pointer" onClick={() => handleClick(record.jobInfor._id)}>{record.jobInfor.name}</span>
             )
         },
         {
@@ -69,12 +90,12 @@ function ListCV() {
             title: "Trạng thái",
             key: "statusRed",
             render: (_, record) => (
-                record.accepted ? (<Tag color="green">Đã chấp nhận</Tag>) : record.statusRead ? (<Tag color="blue">Đã đọc</Tag>) : <Tag>Chưa đọc</Tag>
+                record.status == "initial" ? (<Tag >Chưa duyệt</Tag>) : record.status == "accepted" ? (<Tag color="green">Đã chấp nhận</Tag>) : <Tag color="red">Đã từ chối</Tag>
             )
         }
         ,
         {
-            title: 'Action',
+            title: 'Hành động',
             key: 'action',
             render: (_, record) => {
                 return (
@@ -96,6 +117,19 @@ function ListCV() {
         <>
             {contextHolder}
             <Table columns={columns} dataSource={listCVs} rowKey={"id"} />
+            {accept && <Modal footer={false} open={isModalOpen} onCancel={handleCancel}>
+                <div className="space-y-6">
+                    <h1 className="text-[25px] font-bold">Tiêu chí chấp nhận</h1>
+                    <div>
+                        <h1 className="text-[18px] font-medium">Yêu cầu kinh nghiệm</h1>
+                        <div dangerouslySetInnerHTML={{ __html: accept.infor.experience}} />
+                    </div>
+                    <div>
+                        <h1 className="text-[18px] font-medium">Yêu cầu trình độ</h1>
+                        <div dangerouslySetInnerHTML={{ __html: accept.infor.level}} />
+                    </div>
+                </div>
+            </Modal>}
         </>
     );
 }

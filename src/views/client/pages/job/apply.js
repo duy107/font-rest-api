@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { close } from "../../../../actions/formApply";
 import { useState } from "react";
 import { create } from "../../../../services/client/cv.services";
+import Tinymce from "../../../../components/Tinymce";
 
 function FormApply({ job }) {
     const inforUser = useSelector(state => state.infor);
@@ -58,9 +59,9 @@ function FormApply({ job }) {
                             <Row gutter={[20, 20]}>
                                 <Col span={12}>
                                     <Form.Item label="Họ tên" name="fullName">
-                                        <Input disabled/>
+                                        <Input disabled />
                                     </Form.Item>
-                                </Col>  
+                                </Col>
                                 <Col span={12}>
                                     <Form.Item label="Số điện thoại" name="phone">
                                         <Input disabled />
@@ -68,22 +69,17 @@ function FormApply({ job }) {
                                 </Col>
                                 <Col span={12}>
                                     <Form.Item label="Email" name="email">
-                                        <Input disabled/>
+                                        <Input disabled />
                                     </Form.Item>
                                 </Col>
                                 <Col span={12}>
                                     <Form.Item label="Địa chỉ" name="address">
-                                        <Input disabled/>
+                                        <Input disabled />
                                     </Form.Item>
                                 </Col>
-                                <Col span={24}>
-                                    <Form.Item label="Mô tả" name="description">
-                                        <Input.TextArea rows={4} />
-                                    </Form.Item>
-                                </Col>
-                                <Col span={24}>
-                                    <Form.Item label="Danh sách link project đã làm" name="project">
-                                        <Input.TextArea rows={4} />
+                                <Col span={24} >
+                                    <Form.Item label="Mô tả bản thân" name="description">
+                                        <Tinymce isEdit={true} showPlaceholder={true}/>
                                     </Form.Item>
                                 </Col>
                                 <Col span={24}>

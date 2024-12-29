@@ -1,6 +1,6 @@
 import { Editor } from "@tinymce/tinymce-react";
 
-function Tinymce({ value, onChange, isEdit }) {
+function Tinymce({ value, onChange, isEdit , showPlaceholder}) {
     const handleEditorChange = (content) => {
         if (onChange) {
             onChange(content);
@@ -32,7 +32,8 @@ function Tinymce({ value, onChange, isEdit }) {
                         favs: { title: 'My Favorites', items: 'code visualaid | searchreplace | emoticons' }
                     },
                     menubar: 'favs file edit view insert format tools table help',
-                    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+                    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
+                    placeholder: ( showPlaceholder ? "Nhập đầy đủ thông tin bao gồm trình độ học vấn, kinh nghiệm làm việc, link project,..." : "")
                 }}
             />
         </div>

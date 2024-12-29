@@ -8,8 +8,8 @@ function Footer() {
                 <div className="container mx-auto">
                     <div className="flex gap-2 max-w-[80%] mx-auto py-[30px] px-[10px]">
                         <div className="w-1/3">
-                            <img />
-                            <div>Đại học Công Nghiệp Hà Nội</div>
+                            <h2 className="text-[20px] font-medium">Địa chỉ</h2>
+                            <div>Số 1 Giang Văn Minh, phường Kim Mã, quận Ba Đình, Hà Nội.</div>
                         </div>
                         <div className="w-1/3 flex flex-col items-center">
                             <h2 className="text-[20px] font-medium">Về chúng tôi</h2>

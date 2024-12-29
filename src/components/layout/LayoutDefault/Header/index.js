@@ -8,7 +8,8 @@ import { useSelector } from "react-redux";
 import { Button } from "antd";
 import { useEffect, useState } from "react";
 import { auth } from "../../../../services/client/auth.services";
-import logo from "./logo.png"
+import logo from "./logo.jpg"
+import { AuditOutlined } from "@ant-design/icons";
 
 function Header() {
     const tokenUser = cookie.getCookie("tokenUser");
@@ -41,7 +42,7 @@ function Header() {
                             <img src="http://res.cloudinary.com/dxx1lgamz/image/upload/v1732164826/lydd0molalmluj0xfy02.jpg" alt="logo" />
                         </Link> */}
                         <div className="w-[60px] h-[60px] rounded-full overflow-hidden">
-                            <img src={logo} className="w-full h-full object-cover" />
+                            <img src={logo} className="w-full h-full object-contain" />
                         </div>
                         <div className="flex flex-1 gap-5 justify-center">
                             <Link to="/" className="text-gray-400 text-[15px] hover:text-gray-700 transition-all duration-[350ms] ease-in-out cursor-pointer no-underline">Trang chủ</Link>
@@ -54,6 +55,7 @@ function Header() {
                             {((tokenUser && state && check) || (token && state && check)) ? (
                                 tokenUser && state && check ? (
                                     <div className="flex gap-2">
+                                        <Link to="/cv"><Button icon={<AuditOutlined />}>Danh sách CV</Button></Link>
                                         <Link to={"/infor"}><Button iconPosition="start" icon={<FaUser />}>{infor.fullName}</Button></Link>
                                         <Link to={"/logout"}><Button icon={<IoIosLogOut />}>Đăng xuất</Button></Link>
                                     </div>

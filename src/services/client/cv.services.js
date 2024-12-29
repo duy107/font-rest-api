@@ -5,7 +5,7 @@ export const create = async (data) => {
     return res;
 }
 
-export const cvByIdUser = async (id) => {
-    const res = await get(`cv/${id}`);
+export const cvByIdUser = async (id, status) => {
+    const res = await get(`cv/${id}/${status}`);
     return res;
 }

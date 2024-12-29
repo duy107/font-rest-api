@@ -23,7 +23,7 @@ function Forgot() {
                 <Form onSubmit={handleSubmit}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" required />
+                        <Form.Control type="email" placeholder="Nhập email muốn khôi phục" required />
                     </Form.Group>
                     <Button
                         variant="primary" type="submit" >

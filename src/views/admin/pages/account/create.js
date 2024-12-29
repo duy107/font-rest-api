@@ -44,7 +44,7 @@ function CreateAccount() {
                                     <form id="contact-form" role="form" onSubmit={handleSubmit}>
                                         <div className="controls">
                                             <div className="row">
-                                                <div className="col-md-6">
+                                                <div className="col-md-12">
                                                     <div className="form-group">
                                                         <label htmlFor="form_name">Họ tên</label>
                                                         <input
@@ -52,27 +52,27 @@ function CreateAccount() {
                                                             type="text"
                                                             name="name"
                                                             className="form-control"
-                                                            placeholder="Please enter your name"
+                                                            placeholder="Nhập họ và tên"
                                                             required
                                                         />
                                                     </div>
                                                 </div>
-                                                <div className="col-md-6">
+                                                <div className="col-md-12">
                                                     <div className="form-group">
-                                                        <label htmlFor="form_lastname">Số điện thoại</label>
+                                                        <label htmlFor="phonephone">Số điện thoại</label>
                                                         <input
-                                                            id="form_lastname"
+                                                            id="phonephone"
                                                             type="text"
                                                             name="phone"
                                                             className="form-control"
-                                                            placeholder="Please enter your phone"
+                                                            placeholder="Nhập số điện thoạithoại"
                                                             required
                                                         />
                                                     </div>
                                                 </div>
                                             </div>
                                             <div className="row">
-                                                <div className="col-md-6">
+                                                <div className="col-md-12">
                                                     <div className="form-group">
                                                         <label htmlFor="form_email">Email</label>
                                                         <input
@@ -80,26 +80,26 @@ function CreateAccount() {
                                                             type="email"
                                                             name="email"
                                                             className="form-control"
-                                                            placeholder="Please enter your email"
+                                                            placeholder="Nhập email"
                                                             required
                                                         />
                                                     </div>
                                                 </div>
-                                                <div className="col-md-6">
+                                                <div className="col-md-12">
                                                     <div className="form-group">
                                                         <label htmlFor="form_need">Mật khẩu</label>
                                                         <input
                                                             type="password"
                                                             name="password"
                                                             className='form-control'
-                                                            placeholder='Please enter password'
+                                                            placeholder='Nhập mật khẩu'
                                                             required
                                                         />
                                                     </div>
                                                 </div>
                                             </div>
                                             <div className="row">
-                                                <div className="col-md-6">
+                                                <div className="col-md-12">
                                                     <div className="form-group">
                                                         <label htmlFor="permission">Phân quyền</label>
                                                         <select id="permission" name="role_id" className='form-control' defaultValue="">

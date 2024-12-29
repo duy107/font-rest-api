@@ -9,9 +9,9 @@ function JobManagement() {
         <>
             <h1>Quản lý công việc</h1>
             {permission.includes("job_add") &&
-                <Link to={"create"}><Button icon={<FaPlus />}>Tạo mới công việc</Button></Link>
+                <Link to={"create"}><Button type="primary" icon={<FaPlus/>}>Tạo mới công việc</Button></Link>
             }
-            <div><ListJob /></div>
+            <div className="mt-[15px]"><ListJob /></div>
         </>
     );
 }

@@ -22,6 +22,7 @@ function JobDetail() {
         };
         fetchApi();
     }, []);
+    console.log(infor);
     return (
         <>
             {
@@ -41,25 +42,25 @@ function JobDetail() {
                                 <div className="rounded-md bg-white p-4 h-full">
                                     <h2 className="text-[25px]">Mô tả công việc</h2>
                                     <div dangerouslySetInnerHTML={{ __html: infor.description }} />
-                                </div>
+                                </div>  
                             </div>
                             <div className="w-[35%] h-fit sticky z-10 top-[92px]">
                                 <div className="p-2 flex flex-col gap-2">
-                                    {isLogin && <div className="w-full center text-[20px] font-medium  border-sm text-[#C43820]  border-red-300 py-2 rounded-md cursor-pointer hover:bg-red-200 transition-colors duration-[300ms] ease-in-out" onClick={() => dispatch(show(true))} block={false}>Ứng tuyển ngay</div>}
+                                    {isLogin && !infor.deleted && infor.status && <div className="w-full center text-[20px] font-medium  border-sm text-[#C43820]  border-red-300 py-2 rounded-md cursor-pointer hover:bg-red-200 transition-colors duration-[300ms] ease-in-out" onClick={() => dispatch(show(true))} block={false}>Ứng tuyển ngay</div>}
                                     <div className="bg-white rounded-sm w-full">
                                         <div className="font-medium text-[18px] p-2">Thông tin chung</div>
                                         <div className="flex flex-col border-t p-2 gap-3">
                                             <div>
                                                 <div className="font-medium text-[17px]">Năm kinh nghiệm tối thiểu</div>
-                                                <span>Không yêu cầu</span>
+                                                <span dangerouslySetInnerHTML={{ __html: infor.experience }}></span>
                                             </div>
                                             <div>
-                                                <div className="font-medium text-[17px]">Cấp bậc</div>
-                                                <span>Fresher, Junior, Middle</span>
+                                                <div className="font-medium text-[17px]">Yêu cầu học vấn</div>
+                                                <span dangerouslySetInnerHTML={{ __html: infor.level }}></span>
                                             </div>
                                             <div>
-                                                <div className="font-medium text-[17px]">Loại hợp đồng</div>
-                                                <span>Full time</span>
+                                                <div className="font-medium text-[17px]">Quyền lợi</div>
+                                                <span dangerouslySetInnerHTML={{ __html: infor.benefit }}></span>
                                             </div>
                                             <div>
                                                 <span>Ngôn ngữ: </span>

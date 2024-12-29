@@ -10,12 +10,6 @@ import { overview } from "../../../../services/admin/overview.services";
 function DashBoard() {
     const [statistic, setStatistic] = useState(null);
     useEffect(() => {
-        try {
-            console.log(cookie.getCookie("permission"));
-            console.log(jwtDecode(cookie.getCookie("permission")));
-        } catch (error) {
-            console.log(new Error(error).message);
-        }
         const fetchApi = async () => {
             const statistics = await overview();
             if (statistics) {
@@ -24,6 +18,7 @@ function DashBoard() {
         }
         fetchApi();
     }, []);
+    console.log(statistic);
     return (
         <>
             {
@@ -47,7 +42,45 @@ function DashBoard() {
                                     <InforCompany infor={statistic.companyInfor} />
                                 </Col>
                                 <Col span={24}>
-                                    <div className="bg-red-200 rounded-md font-bold text-[30px] px-3 py-2 relative overflow-hidden before:content-[''] before:top-0 before:left-0 before:absolute before:w-1 before:h-full before:bg-red-500 text-white">{statistic.cvStatistic.statusFalse} CV mới đang chờ duyệt</div>
+                                    <div className="bg-red-200 rounded-md font-bold text-[30px] px-3 py-2 relative overflow-hidden before:content-[''] before:top-0 before:left-0 before:absolute before:w-1 before:h-full before:bg-red-500 text-white">{statistic.cvStatistic.initial} CV mới đang chờ duyệt</div>
+                                </Col>
+                                <Col span={24}>
+                                    <div className="overflow-x-auto">
+                                        <table className="table-auto border-collapse border border-gray-300 w-full">
+                                            <thead>
+                                                <tr className="bg-gray-100">
+                                                    <th className="border border-gray-300 px-4 py-2 text-left">Tên công việc</th>
+                                                    <th className="border border-gray-300 px-4 py-2 text-left">Email</th>
+                                                    <th className="border border-gray-300 px-4 py-2 text-left">Lương</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {
+                                                    statistic.listCv.length > 0 ?
+                                                        (
+                                                            <>
+                                                                {statistic.listCv.map((item, index) => (
+                                                                    <tr key={index}>
+                                                                        <td className="border border-gray-300 px-4 py-2">{item?.inforJob?.name}</td>
+                                                                        <td className="border border-gray-300 px-4 py-2">{item?.inforUser?.email}</td>
+                                                                        <td className="border border-gray-300 px-4 py-2">{item?.inforJob?.salary}</td>
+                                                                    </tr>
+                                                                ))}
+                                                                <tr>
+                                                                    <td className="border border-gray-300 px-4 py-2 text-[18px] font-medium text-right" colSpan={2}>Phí dịch vụ</td>
+                                                                    <td className="border border-gray-300 px-4 py-2 text-[18px] font-medium">{statistic.listCv.length} triệu</td>
+                                                                </tr>
+                                                            </>
+                                                        )
+                                                        : (
+                                                            <tr>
+                                                                <td className="border border-gray-300 px-4 py-2 text-center font-medium text-[18px]" colSpan={3}>Chưa có CV nào được chấp nhận</td>
+                                                            </tr>
+                                                        )
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </Col>
                             </Row>
                         </div>

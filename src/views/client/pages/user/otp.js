@@ -34,7 +34,7 @@ function OTP() {
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Nhập mã OTP</Form.Label>
-                        <Form.Control type="text" placeholder="Enter OTP" required/>
+                        <Form.Control type="text" placeholder="Nhập mã OTP" required/>
                     </Form.Group>
                     <Button
                         variant="primary" type="submit" >

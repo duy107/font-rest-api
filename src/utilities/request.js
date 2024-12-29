@@ -36,14 +36,14 @@ export const del = async (path, id) => {
 }
 
 export const patch = async (path, item) => {
-    const iObject = item instanceof FormData;
+    const isObject = item instanceof FormData;
     const res = await fetch(`${api}${path}`, {
         method: "PATCH",
-        headers: iObject ? undefined : {
+        headers: isObject ? undefined : {
             "Content-Type": "application/json"
         },
         credentials: "include",
-        body: iObject ? item : JSON.stringify(item)
+        body: isObject ? item : JSON.stringify(item)
     });
     const data = await res.json();
     return data;

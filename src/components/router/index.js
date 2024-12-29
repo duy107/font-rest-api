@@ -27,6 +27,8 @@ import Role from "../../views/admin/pages/role";
 import Permission from "../../views/admin/pages/permission";
 import Account from "../../views/admin/pages/account";
 import CreateAccount from "../../views/admin/pages/account/create";
+import UpdateJob from "../../views/admin/pages/job/Update";
+import ListCv from "../../views/client/pages/cv";
 export const router = [
     {
         path: "/",
@@ -51,6 +53,10 @@ export const router = [
             {
                 path: "infor",
                 element: <AuthClient> <Infor /> </AuthClient>
+            },
+            {
+                path: "cv",
+                element: <AuthClient> <ListCv /> </AuthClient>
             },
             {
                 path: "register",
@@ -117,6 +123,10 @@ export const router = [
                             {
                                 path: "job-management/create",
                                 element: <CreateJob />
+                            },
+                            {
+                                path: "job-management/update/:id",
+                                element: <UpdateJob />
                             },
                             {
                                 path: "cv-management",
